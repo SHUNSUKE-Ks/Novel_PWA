@@ -1,0 +1,45 @@
+/* Design Tokens - Novel Game */
+
+:root {
+  /* Colors - Background */
+  --color-bg-dark: #0a0a0a;
+  --color-bg-panel: #1a1a1a;
+  --color-bg-gradient-start: #111;
+  --color-bg-gradient-end: #1a1a1a;
+  
+  /* Colors - Text */
+  --color-text-main: #e0e0e0;
+  --color-text-accent: #d4af37; /* Gold */
+  --color-text-muted: #888;
+  
+  /* Colors - Accent */
+  --color-primary: #3d3d3d;
+  --color-active: #5d5d5d;
+  --color-border: #333;
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  
+  /* Typography */
+  --font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.85rem;
+  --font-size-sm: 0.9rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2.5rem;
+  --font-size-3xl: 3rem;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}

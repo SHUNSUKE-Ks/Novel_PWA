@@ -1,0 +1,53 @@
+@import './styles/variables.css';
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: var(--font-main);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: var(--color-text-main);
+  background-color: var(--color-bg-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-text-accent);
+  text-decoration: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+}

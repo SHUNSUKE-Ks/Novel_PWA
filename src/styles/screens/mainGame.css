@@ -1,0 +1,236 @@
+.main-game-screen {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+}
+
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+    z-index: 0;
+}
+
+.bg-black {
+    background: #000;
+}
+
+.bg-magic-tower {
+    background: linear-gradient(135deg, #1a0a2e 0%, #3d1f5e 50%, #1a0a2e 100%);
+}
+
+.bg-magic-circle {
+    background: linear-gradient(135deg, #0a1a2e 0%, #1f3d5e 50%, #0a1a2e 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.game-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.game-header>* {
+    pointer-events: auto;
+}
+
+.header-right {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.header-btn {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-text-main);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    font-family: var(--font-main);
+    backdrop-filter: blur(5px);
+}
+
+.header-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: var(--color-text-accent);
+    color: var(--color-text-accent);
+}
+
+.character-layer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 50;
+}
+
+.character-sprite {
+    font-size: 15rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.message-window {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 1000px;
+    min-height: 180px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid #444;
+    padding: var(--spacing-md) var(--spacing-lg);
+    cursor: pointer;
+    z-index: 75;
+    border-radius: 8px;
+}
+
+.speaker-name {
+    color: var(--color-text-accent);
+    font-weight: bold;
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-xs);
+}
+
+.message-text {
+    color: var(--color-text-main);
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    position: relative;
+}
+
+.next-indicator {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.choice-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    z-index: 80;
+}
+
+.choice-button {
+    padding: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid var(--color-text-accent);
+    color: var(--color-text-accent);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    font-family: var(--font-main);
+    border-radius: 4px;
+}
+
+.choice-button:hover {
+    background: var(--color-text-accent);
+    color: #000;
+}
+
+.menu-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.menu-modal-content {
+    width: 300px;
+    padding: var(--spacing-lg);
+    background: var(--color-bg-panel);
+    border: 1px solid #555;
+    border-radius: 8px;
+}
+
+.menu-modal-content h3 {
+    margin: 0 0 var(--spacing-md) 0;
+    color: var(--color-text-accent);
+    text-align: center;
+}
+
+.menu-modal-content button {
+    width: 100%;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-main);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    font-family: var(--font-main);
+}
+
+.menu-modal-content button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-text-accent);
+    color: var(--color-text-accent);
+}

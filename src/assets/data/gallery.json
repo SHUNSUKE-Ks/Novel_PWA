@@ -1,0 +1,58 @@
+{
+    "images": [
+        {
+            "id": "img001",
+            "title": "理の塔の魔法使い",
+            "filename": "9f580350d833f8147f65c2750455f8e6.jpg",
+            "tags": [
+                "キャラクター",
+                "主人公",
+                "魔法"
+            ],
+            "description": "理の塔で研究に冒頭する魔法使いの姿"
+        },
+        {
+            "id": "img002",
+            "title": "使い魔との対話",
+            "filename": "IMG_0038-removebg-preview.png",
+            "tags": [
+                "キャラクター",
+                "使い魔"
+            ],
+            "description": "主人公と使い魔が真理について議論する場面"
+        },
+        {
+            "id": "img003",
+            "title": "魔法陣の輝き",
+            "filename": "fairy-tale-house7.jpg",
+            "tags": [
+                "背景",
+                "魔法",
+                "魔法陣"
+            ],
+            "description": "青く光り輝く魔法陣"
+        },
+        {
+            "id": "img004",
+            "title": "理の塔外観",
+            "filename": "ffaef9802239e020a3bf7e6ffa9b35eb.jpg",
+            "tags": [
+                "背景",
+                "建築物"
+            ],
+            "description": "夜空に聳える理の塔"
+        }
+    ],
+    "trash": [],
+    "availableTags": [
+        "キャラクター",
+        "主人公",
+        "使い魔",
+        "背景",
+        "魔法",
+        "魔法陣",
+        "建築物",
+        "風景",
+        "イベント"
+    ]
+}

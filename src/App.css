@@ -1,0 +1,48 @@
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-screen,
+.error-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-main);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--color-text-accent);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-screen h2 {
+  color: #ff4d4d;
+  margin-bottom: 1rem;
+}
+
+.error-screen button {
+  padding: 0.8rem 2rem;
+  background: var(--color-text-accent);
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}

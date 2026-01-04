@@ -1,0 +1,200 @@
+.chapter-gallery-screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background: #111;
+    position: relative;
+}
+
+.side-panel {
+    width: 300px;
+    background: var(--color-bg-panel);
+    border-right: 1px solid var(--color-border);
+    transition: width var(--transition-normal);
+    overflow: hidden;
+}
+
+.side-panel.closed {
+    width: 0;
+}
+
+.side-panel-content {
+    width: 300px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.side-panel-header {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.side-panel-header h3 {
+    color: var(--color-text-accent);
+    font-size: var(--font-size-lg);
+    margin: 0;
+}
+
+.stepper-container {
+    padding: var(--spacing-sm);
+}
+
+.episode-item {
+    margin-bottom: var(--spacing-md);
+}
+
+.episode-header {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.chapter-item {
+    padding: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    border-radius: 4px;
+}
+
+.chapter-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.chapter-item.active {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--color-text-accent);
+    color: var(--color-text-accent);
+}
+
+.chapter-icon {
+    font-size: var(--font-size-sm);
+}
+
+.chapter-title {
+    font-size: var(--font-size-sm);
+}
+
+.toggle-panel-btn {
+    position: absolute;
+    left: 300px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 48px;
+    background: var(--color-bg-panel);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-main);
+    cursor: pointer;
+    z-index: 10;
+    transition: left var(--transition-normal);
+    border-radius: 0 4px 4px 0;
+}
+
+.chapter-gallery-screen:has(.side-panel.closed) .toggle-panel-btn {
+    left: 0;
+}
+
+.main-content-area {
+    flex: 1;
+    padding: var(--spacing-xl) var(--spacing-2xl);
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+    overflow-y: auto;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: transparent;
+    border: 1px solid var(--color-border-light);
+    color: var(--color-text-main);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    font-family: var(--font-main);
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-text-accent);
+    color: var(--color-text-accent);
+}
+
+.chapter-title-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.chapter-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-accent);
+    margin-bottom: var(--spacing-xs);
+}
+
+.chapter-main-title {
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-main);
+    margin: 0;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.event-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-border);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    transition: var(--transition-fast);
+}
+
+.event-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-text-accent);
+    transform: translateY(-2px);
+}
+
+.event-title {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-main);
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
+.event-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.event-read-btn {
+    width: 100%;
+    padding: var(--spacing-sm);
+    background: transparent;
+    border: 1px solid var(--color-text-accent);
+    color: var(--color-text-accent);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    font-family: var(--font-main);
+}
+
+.event-read-btn:hover {
+    background: var(--color-text-accent);
+    color: #000;
+}

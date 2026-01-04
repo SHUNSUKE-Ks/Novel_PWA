@@ -1,0 +1,56 @@
+.title-screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #2a2a2a, #000);
+}
+
+.title-content {
+    text-align: center;
+}
+
+.game-title {
+    font-size: var(--font-size-3xl);
+    color: var(--color-text-accent);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    margin-bottom: var(--spacing-lg);
+    font-weight: bold;
+}
+
+.title-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.start-button {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    font-size: var(--font-size-xl);
+    background: transparent;
+    border: 2px solid var(--color-text-accent);
+    color: var(--color-text-accent);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-family: var(--font-main);
+    min-width: 280px;
+}
+
+.start-button:hover {
+    background: var(--color-text-accent);
+    color: #000;
+}
+
+.start-button.import-btn {
+    font-size: var(--font-size-base);
+    border-color: #4a90e2;
+    color: #4a90e2;
+    padding: 0.7rem var(--spacing-lg);
+}
+
+.start-button.import-btn:hover {
+    background: #4a90e2;
+    color: #fff;
+}

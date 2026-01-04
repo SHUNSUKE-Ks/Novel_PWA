@@ -1,0 +1,162 @@
+{
+    "meta": {
+        "title": "理の魔法使い",
+        "type": "visual_novel",
+        "version": "1.0"
+    },
+    "scenario": [
+        {
+            "storyID": 1100,
+            "type": "SCENE_START",
+            "sceneTags": [
+                "bg_magic_tower"
+            ],
+            "note": "Chapter 1 - Event 1 開始"
+        },
+        {
+            "storyID": 1110,
+            "speaker": "理の魔法使い",
+            "text": "ここへ来た理由は、理を求めたからだろう。",
+            "tags": [
+                "chara_mage_calm"
+            ]
+        },
+        {
+            "storyID": 1120,
+            "speaker": "理の魔法使い",
+            "text": "魔法とは理である。理なき力は、ただの暴力に過ぎない。",
+            "tags": [
+                "chara_mage_calm"
+            ]
+        },
+        {
+            "storyID": 1130,
+            "event": {
+                "type": "TAP_NEXT",
+                "payload": {
+                    "nextStoryID": 1200
+                }
+            }
+        },
+        {
+            "storyID": 1200,
+            "type": "SCENE_START",
+            "sceneTags": [
+                "bg_magic_circle"
+            ],
+            "note": "Event 2 開始"
+        },
+        {
+            "storyID": 1210,
+            "speaker": "理の魔法使い",
+            "text": "さあ、選びたまえ。力の理か、調和の理か。",
+            "tags": [
+                "chara_mage_calm"
+            ]
+        },
+        {
+            "storyID": 1220,
+            "text": "あなたの選択が、この物語の結末を決める。",
+            "event": {
+                "type": "CHOICE",
+                "payload": {
+                    "choices": [
+                        {
+                            "label": "力の理を選ぶ",
+                            "nextStoryID": 1300
+                        },
+                        {
+                            "label": "調和の理を選ぶ",
+                            "nextStoryID": 1301
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "storyID": 1300,
+            "speaker": "理の魔法使い",
+            "text": "力の理か...その選択には、責任が伴う。",
+            "tags": [
+                "chara_mage_calm"
+            ]
+        },
+        {
+            "storyID": 1310,
+            "event": {
+                "type": "TAP_NEXT",
+                "payload": {
+                    "nextStoryID": 1400
+                }
+            }
+        },
+        {
+            "storyID": 1301,
+            "speaker": "理の魔法使い",
+            "text": "調和の理...良い選択だ。",
+            "tags": [
+                "chara_mage_calm"
+            ]
+        },
+        {
+            "storyID": 1311,
+            "flags": {
+                "trusted_reason": true
+            },
+            "event": {
+                "type": "TAP_NEXT",
+                "payload": {
+                    "nextStoryID": 1400
+                }
+            }
+        },
+        {
+            "storyID": 1400,
+            "type": "SCENE_START",
+            "sceneTags": [
+                "bg_magic_tower"
+            ],
+            "note": "Event 3 開始"
+        },
+        {
+            "storyID": 1410,
+            "speaker": "理の魔法使い",
+            "text": "これで試練は終わりだ。",
+            "tags": [
+                "chara_mage_calm"
+            ]
+        },
+        {
+            "storyID": 1420,
+            "speaker": "理の魔法使い",
+            "text": "理の道を歩み続けるがいい。",
+            "tags": [
+                "chara_mage_calm"
+            ],
+            "event": {
+                "type": "END",
+                "payload": {
+                    "goto": "RESULT"
+                }
+            }
+        },
+        {
+            "storyID": 2100,
+            "type": "SCENE_START",
+            "sceneTags": [
+                "bg_black"
+            ],
+            "note": "Episode 2 - Chapter 1"
+        },
+        {
+            "storyID": 2110,
+            "text": "新しい冒険が始まる...",
+            "event": {
+                "type": "END",
+                "payload": {
+                    "goto": "RESULT"
+                }
+            }
+        }
+    ]
+}
