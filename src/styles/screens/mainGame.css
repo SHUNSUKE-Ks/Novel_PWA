@@ -124,6 +124,12 @@
     cursor: pointer;
     z-index: 75;
     border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.message-window.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .speaker-name {

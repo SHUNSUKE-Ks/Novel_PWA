@@ -1,0 +1,347 @@
+/* JSON Editor Styles */
+
+.json-editor-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Editor Header */
+.editor-view-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    display: flex;
+    justify-content: gap;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    gap: var(--spacing-md);
+    z-index: 1001;
+}
+
+.editor-title {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--color-text-main);
+    white-space: nowrap;
+}
+
+.editor-search-container {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+.editor-search-input {
+    width: 100%;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 8px 12px 8px 35px;
+    border-radius: 8px;
+    font-family: var(--font-main);
+}
+
+.editor-search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.editor-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.pattern-select {
+    background: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.game-preview-toggle {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Common Pattern Layout */
+.pattern-content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background-color: #0f172a;
+    /* Deep blue-black */
+}
+
+/* Pattern 1: Text Area */
+.textarea-editor {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--spacing-md);
+}
+
+.textarea-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.save-btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
+
+.json-textarea {
+    flex: 1;
+    background: #1e293b;
+    color: #4ade80;
+    font-family: 'Courier New', Courier, monospace;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border: 1px solid #334155;
+    resize: none;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.error-banner {
+    background: #7f1d1d;
+    color: #fecaca;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: var(--spacing-sm);
+    border: 1px solid #b91c1c;
+}
+
+/* Pattern 2: Table */
+.table-editor {
+    background: #fff;
+    color: #333;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-md);
+}
+
+.table-container {
+    flex: 1;
+    overflow: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.editor-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.editor-table th {
+    background: #f3f4f6;
+    text-align: left;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+    border-bottom: 2px solid #ddd;
+}
+
+.editor-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.path-cell {
+    font-family: monospace;
+    color: #666;
+    font-size: 12px;
+}
+
+.value-input {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Pattern 3: Tree */
+.tree-editor {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-md);
+}
+
+.tree-view-area {
+    flex: 1;
+    overflow: auto;
+    background: #1e293b;
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    border: 1px solid #334155;
+}
+
+.tree-node-row {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
+    position: relative;
+    cursor: default;
+}
+
+.tree-node-row:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.tree-node-row .action-buttons {
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.tree-node-row:hover .action-buttons {
+    opacity: 1;
+}
+
+.node-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.node-btn-add {
+    color: #60a5fa;
+}
+
+.node-btn-add:hover {
+    background: rgba(96, 165, 250, 0.2);
+}
+
+.node-btn-delete {
+    color: #f87171;
+}
+
+.node-btn-delete:hover {
+    background: rgba(248, 113, 113, 0.2);
+}
+
+/* Utilities used in JSX */
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-xs {
+    gap: 0.25rem;
+}
+
+.gap-sm {
+    gap: 0.5rem;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.transition-opacity {
+    transition: opacity 0.2s;
+}
+
+.node-key {
+    color: #60a5fa;
+    /* Blue */
+    font-family: monospace;
+    margin-right: 8px;
+    min-width: 100px;
+}
+
+.node-value {
+    color: #4ade80;
+    /* Green */
+    font-family: monospace;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.node-value:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.node-editing-input {
+    background: #0f172a;
+    border: 1px solid #3b82f6;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    width: 100%;
+    outline: none;
+}
+
+.highlight-match {
+    background: rgba(234, 179, 8, 0.2) !important;
+    border: 1px solid rgba(234, 179, 8, 0.5);
+}
+
+.highlight-text {
+    color: #facc15 !important;
+    font-weight: bold;
+}
+
+.tree-toggle-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.node-meta {
+    color: #64748b;
+    font-size: 12px;
+    margin-left: 8px;
+}

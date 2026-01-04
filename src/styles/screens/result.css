@@ -27,6 +27,38 @@
     margin-bottom: var(--spacing-xl);
 }
 
+.result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.next-event-button,
+.return-button {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    font-size: var(--font-size-base);
+    background: transparent;
+    border: 2px solid var(--color-text-accent);
+    color: var(--color-text-accent);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-family: var(--font-main);
+    width: 320px;
+    max-width: 100%;
+}
+
+.next-event-button {
+    background: var(--color-text-accent);
+    color: #000;
+}
+
+.next-event-button:hover {
+    background: #fff;
+    border-color: #fff;
+    color: #000;
+}
+
 .return-button {
     padding: var(--spacing-sm) var(--spacing-xl);
     font-size: var(--font-size-base);

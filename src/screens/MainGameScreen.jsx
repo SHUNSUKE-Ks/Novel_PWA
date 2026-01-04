@@ -19,9 +19,9 @@ const CharacterLayer = ({ tags }) => {
     );
 };
 
-const MessageWindow = ({ speaker, text, isComplete, onClick }) => {
+const MessageWindow = ({ speaker, text, isComplete, onClick, isVisible }) => {
     return (
-        <div className="message-window" onClick={onClick}>
+        <div className={`message-window ${!isVisible ? 'hidden' : ''}`} onClick={onClick}>
             <div className="speaker-name">{speaker || 'ナレーション'}</div>
             <div className="message-text">
                 {text}
@@ -48,7 +48,7 @@ const ChoiceContainer = ({ choices, onSelect }) => {
 };
 
 const GameHeader = () => {
-    const { returnToChapterGallery, goToGallery, goToImport, toggleMenu } = useGameStore();
+    const { returnToChapterGallery, toggleMenu } = useGameStore();
 
     return (
         <div className="game-header">
@@ -56,12 +56,6 @@ const GameHeader = () => {
                 ← 戻る
             </button>
             <div className="header-right">
-                <button className="header-btn" onClick={goToGallery} title="ギャラリー">
-                    📷
-                </button>
-                <button className="header-btn" onClick={goToImport} title="インポート">
-                    ☁️
-                </button>
                 <button className="header-btn" onClick={toggleMenu}>
                     メニュー
                 </button>
@@ -159,15 +153,7 @@ export const MainGameScreen = () => {
         return <div className="main-game-screen">Loading...</div>;
     }
 
-    // Don't show message window for SCENE_START
-    if (currentNode.type === 'SCENE_START') {
-        return (
-            <div className="main-game-screen">
-                <BackgroundLayer sceneTags={currentNode.sceneTags} />
-            </div>
-        );
-    }
-
+    const showMessage = currentNode.type !== 'SCENE_START' && (currentNode.text || currentNode.speaker);
     const showChoices = currentNode.event?.type === 'CHOICE' && isComplete;
 
     return (
@@ -180,6 +166,7 @@ export const MainGameScreen = () => {
                 text={displayText}
                 isComplete={isComplete}
                 onClick={handleMessageClick}
+                isVisible={showMessage}
             />
             {showChoices && (
                 <ChoiceContainer

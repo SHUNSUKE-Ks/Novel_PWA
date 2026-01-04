@@ -7,12 +7,40 @@ import { MainGameScreen } from './screens/MainGameScreen';
 import { ResultScreen } from './screens/ResultScreen';
 import { GalleryScreen } from './screens/GalleryScreen';
 import { AssetImportScreen } from './screens/AssetImportScreen';
+import { GlobalHeader } from './components/common/GlobalHeader';
+import JsonEditor from './components/JsonEditor';
 import './App.css';
 
 function App() {
-  const { screen, setGameData } = useGameStore();
+  const {
+    screen, setGameData, episodes, galleryData, scenario,
+    isEditorOpen, toggleEditor, editorTargetFile, setEditorTargetFile
+  } = useGameStore();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // Dynamic data and save logic based on editorTargetFile
+  const getEditorContext = () => {
+    switch (editorTargetFile) {
+      case 'scenario.json':
+        return {
+          data: scenario || [],
+          save: (newData) => setGameData({ episodes, gallery: galleryData, scenario: newData })
+        };
+      case 'gallery.json':
+        return {
+          data: galleryData || { images: [] },
+          save: (newData) => setGameData({ episodes, gallery: newData, scenario })
+        };
+      default:
+        return {
+          data: episodes || {},
+          save: (newData) => setGameData({ episodes: newData, gallery: galleryData, scenario })
+        };
+    }
+  };
+
+  const { data: editorData, save: handleEditorSave } = getEditorContext();
 
   useEffect(() => {
     const init = async () => {
@@ -49,12 +77,23 @@ function App() {
 
   return (
     <div className="app-container">
-      {screen === 'TITLE' && <TitleScreen />}
-      {screen === 'CHAPTER_GALLERY' && <ChapterGalleryScreen />}
-      {screen === 'MAIN' && <MainGameScreen />}
-      {screen === 'RESULT' && <ResultScreen />}
-      {screen === 'GALLERY' && <GalleryScreen />}
-      {screen === 'IMPORT' && <AssetImportScreen />}
+      <GlobalHeader />
+      <JsonEditor
+        gameData={editorData}
+        onSave={handleEditorSave}
+        jsonFileName={editorTargetFile}
+        isDev={import.meta.env.DEV}
+        isEditorOpen={isEditorOpen}
+        onToggleEditor={toggleEditor}
+        onFileChange={setEditorTargetFile}
+      >
+        {screen === 'TITLE' && <TitleScreen />}
+        {screen === 'CHAPTER_GALLERY' && <ChapterGalleryScreen />}
+        {screen === 'MAIN' && <MainGameScreen />}
+        {screen === 'RESULT' && <ResultScreen />}
+        {screen === 'GALLERY' && <GalleryScreen />}
+        {screen === 'IMPORT' && <AssetImportScreen />}
+      </JsonEditor>
     </div>
   );
 }

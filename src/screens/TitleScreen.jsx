@@ -12,12 +12,6 @@ export const TitleScreen = () => {
                     <button className="start-button" onClick={goToChapterGallery}>
                         ストーリー
                     </button>
-                    <button className="start-button" onClick={goToGallery}>
-                        ギャラリー
-                    </button>
-                    <button className="start-button import-btn" onClick={goToImport}>
-                        素材インポート
-                    </button>
                 </div>
             </div>
         </div>

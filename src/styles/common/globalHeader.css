@@ -1,0 +1,55 @@
+.global-header {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: var(--spacing-md) var(--spacing-sm);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.header-right-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    pointer-events: auto;
+    background: rgba(10, 25, 47, 0.9);
+    /* 深い青色 (Deep Sea Blue) */
+    padding: var(--spacing-md) var(--spacing-sm);
+    border: 1px solid rgba(100, 149, 237, 0.3);
+    border-right: none;
+    border-radius: 16px 0 0 16px;
+    backdrop-filter: blur(15px);
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.global-header-btn {
+    background: rgba(16, 33, 65, 0.7);
+    border: 1px solid rgba(100, 149, 237, 0.2);
+    color: #a0c4ff;
+    padding: var(--spacing-xs);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: var(--font-main);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+}
+
+.global-header-btn:hover {
+    background: rgba(30, 58, 138, 0.95);
+    border-color: #60a5fa;
+    color: #fff;
+    transform: scale(1.1) translateX(-5px);
+}
+
+.global-header-btn.active {
+    background: rgba(37, 99, 235, 0.9);
+    border-color: #93c5fd;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+}

@@ -45,7 +45,7 @@ const EventCard = ({ event }) => {
         <div className="event-card">
             <h3 className="event-title">{event.title}</h3>
             <p className="event-description">{event.description}</p>
-            <button className="event-read-btn" onClick={() => startEvent(event.startStoryID)}>
+            <button className="event-read-btn" onClick={() => startEvent(event.id, event.startStoryID)}>
                 読む
             </button>
         </div>

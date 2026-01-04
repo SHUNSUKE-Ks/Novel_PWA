@@ -3,14 +3,14 @@ import { useGameStore } from '../hooks/useGameStore';
 import '../styles/screens/assetImport.css';
 
 const ImportHeader = ({ onAuth }) => {
-    const { returnToTitle } = useGameStore();
+    const { goBack } = useGameStore();
 
     return (
         <div className="import-header">
             <div className="import-title">素材インポート (Dropbox)</div>
             <div className="import-actions">
                 <button className="auth-btn" onClick={onAuth}>Dropboxに接続</button>
-                <button className="close-import-btn" onClick={returnToTitle}>閉じる</button>
+                <button className="close-import-btn" onClick={goBack}>閉じる</button>
             </div>
         </div>
     );

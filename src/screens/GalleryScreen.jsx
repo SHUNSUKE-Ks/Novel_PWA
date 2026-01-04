@@ -3,7 +3,7 @@ import { useGameStore } from '../hooks/useGameStore';
 import '../styles/screens/gallery.css';
 
 const GalleryHeader = () => {
-    const { returnToTitle } = useGameStore();
+    const { goBack } = useGameStore();
 
     return (
         <div className="gallery-header">
@@ -11,7 +11,7 @@ const GalleryHeader = () => {
             <div className="gallery-actions">
                 <button className="gallery-action-btn trash-btn" title="ゴミ箱">🗑️</button>
                 <button className="gallery-action-btn add-btn" title="追加">➕</button>
-                <button className="gallery-back-btn" onClick={returnToTitle}>戻る</button>
+                <button className="gallery-back-btn" onClick={goBack}>戻る</button>
             </div>
         </div>
     );
