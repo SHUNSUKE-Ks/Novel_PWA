@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { NotebookPen } from 'lucide-react';
 import { useGameStore } from '../hooks/useGameStore';
 import { useTypewriter } from '../hooks/useTypewriter';
+import TalkLogModal from '../components/talk-log/TalkLogModal';
 import '../styles/screens/mainGame.css';
 
 const BackgroundLayer = ({ sceneTags }) => {
@@ -24,7 +26,7 @@ const MessageWindow = ({ speaker, text, isComplete, onClick, isVisible }) => {
         <div className={`message-window ${!isVisible ? 'hidden' : ''}`} onClick={onClick}>
             <div className="speaker-name">{speaker || 'ナレーション'}</div>
             <div className="message-text">
-                {text}
+                <span className="text-content">{text}</span>
                 {isComplete && <span className="next-indicator">▼</span>}
             </div>
         </div>
@@ -48,13 +50,18 @@ const ChoiceContainer = ({ choices, onSelect }) => {
 };
 
 const GameHeader = () => {
-    const { returnToChapterGallery, toggleMenu } = useGameStore();
+    const { returnToChapterGallery, toggleMenu, toggleTalkLog } = useGameStore();
 
     return (
         <div className="game-header">
-            <button className="header-btn" onClick={returnToChapterGallery}>
-                ← 戻る
-            </button>
+            <div className="header-left">
+                <button className="header-btn" onClick={toggleTalkLog} title="会話ログ">
+                    <NotebookPen size={20} />
+                </button>
+                <button className="header-btn" onClick={returnToChapterGallery}>
+                    ← 戻る
+                </button>
+            </div>
             <div className="header-right">
                 <button className="header-btn" onClick={toggleMenu}>
                     メニュー
@@ -91,7 +98,10 @@ export const MainGameScreen = () => {
         setSceneTags,
         setFlags,
         goToResult,
-        scenario
+        scenario,
+        isTalkLogOpen,
+        toggleTalkLog,
+        talkLog
     } = useGameStore();
 
     const currentNode = getCurrentNode();
@@ -150,7 +160,11 @@ export const MainGameScreen = () => {
     };
 
     if (!currentNode) {
-        return <div className="main-game-screen">Loading...</div>;
+        return (
+            <div className="main-game-screen loading">
+                <div className="loading-spinner"></div>
+            </div>
+        );
     }
 
     const showMessage = currentNode.type !== 'SCENE_START' && (currentNode.text || currentNode.speaker);
@@ -162,19 +176,26 @@ export const MainGameScreen = () => {
             <GameHeader />
             <CharacterLayer tags={currentNode.tags} />
             <MessageWindow
+                key={`msg-${currentNode.storyID}`}
                 speaker={currentNode.speaker}
                 text={displayText}
                 isComplete={isComplete}
                 onClick={handleMessageClick}
                 isVisible={showMessage}
             />
-            {showChoices && (
+            {showChoices ? (
                 <ChoiceContainer
+                    key={`choice-${currentNode.storyID}`}
                     choices={currentNode.event.payload.choices}
                     onSelect={handleChoice}
                 />
-            )}
+            ) : null}
             <MenuModal />
+            <TalkLogModal
+                isOpen={isTalkLogOpen}
+                onClose={toggleTalkLog}
+                logData={talkLog}
+            />
         </div>
     );
 };

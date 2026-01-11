@@ -1,0 +1,530 @@
+/* Table View Container */
+.table-view-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: var(--text-color, #e0e0e0);
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.table-view-header-bar {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem 0;
+    /* Reduced bottom padding */
+    margin-bottom: 0px;
+    gap: 1rem;
+    /* height: 48px;  Removed fixed height restriction */
+    padding-bottom: 0.5rem;
+    /* Add some breathing room */
+}
+
+/* Layout Switcher */
+.layout-switcher {
+    display: flex;
+    gap: 2px;
+    margin-left: auto;
+    /* Push to right */
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.layout-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 4px 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.layout-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.layout-btn.active {
+    color: #a8d0e6;
+    background: rgba(168, 208, 230, 0.1);
+}
+
+/* View Tabs */
+.gallery-view-grid {
+    display: grid;
+    /* Default: 1 column for very small screens */
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Tablet / Landscape Phone */
+@media (min-width: 600px) {
+    .gallery-view-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Desktop / Large Tablet */
+@media (min-width: 900px) {
+    .gallery-view-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop - Max 4 columns as requested */
+@media (min-width: 1200px) {
+    .gallery-view-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.table-view-tabs {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+    overflow-x: auto;
+    width: 100%;
+    margin-left: 0;
+    height: auto;
+}
+
+.view-tab-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 0.2rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    height: auto;
+    display: block;
+}
+
+.view-tab-btn:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.view-tab-btn.active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.view-add-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
+}
+
+.view-add-btn:hover {
+    color: #fff;
+}
+
+.table-view-title {
+    font-size: 1.2rem;
+    margin: 0;
+    padding-left: 0.5rem;
+    border-left: 4px solid var(--accent-color, #a8d0e6);
+    flex-shrink: 0;
+}
+
+.table-tool-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+
+.tool-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.tool-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Inline actions */
+.cell-with-copy {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.copy-btn-inline {
+    opacity: 0;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 2px;
+    transition: all 0.2s;
+    display: flex;
+}
+
+.table-row:hover .copy-btn-inline {
+    opacity: 1;
+}
+
+.copy-btn-inline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Header */
+.table-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.header-cell {
+    padding: 0 0.5rem;
+}
+
+/* Body */
+.table-body {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Rows */
+.table-row {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.table-row:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-row.empty-row {
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    cursor: default;
+}
+
+/* Cells */
+.table-cell {
+    padding: 0 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Tag Styles (for rendering tags inside table) */
+.table-tag {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.4rem;
+    border-radius: 4px;
+    background-color: rgba(100, 100, 100, 0.5);
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+/* Tool Button Active State */
+.tool-btn.active {
+    background: rgba(168, 208, 230, 0.2);
+    border-color: rgba(168, 208, 230, 0.5);
+    color: #a8d0e6;
+}
+
+.tool-btn.icon-only {
+    padding: 4px 6px;
+}
+
+/* Filter Dropdown */
+.tool-dropdown-wrapper {
+    position: relative;
+}
+
+.tool-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    min-width: 200px;
+    background: #2a2a3a;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.dropdown-header {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter-column-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.filter-column-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.filter-column-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.filter-badge {
+    background: #a8d0e6;
+    color: #1a1a2a;
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.filter-values {
+    padding: 0.25rem 0.5rem 0.5rem 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.filter-value-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.filter-value-item input {
+    accent-color: #a8d0e6;
+}
+
+.clear-filters-btn {
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(255, 100, 100, 0.1);
+    border: none;
+    color: #ff8888;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.clear-filters-btn:hover {
+    background: rgba(255, 100, 100, 0.2);
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-bar input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 6px 10px;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: rgba(168, 208, 230, 0.5);
+}
+
+.clear-search {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 4px;
+}
+
+.clear-search:hover {
+    color: #fff;
+}
+
+/* Active Filters Bar */
+.active-filters-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.4rem 1rem;
+    background: rgba(168, 208, 230, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+}
+
+.active-filters-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.active-filter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(168, 208, 230, 0.15);
+    border: 1px solid rgba(168, 208, 230, 0.3);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: #a8d0e6;
+}
+
+.active-filter-tag button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0 2px;
+    font-size: 0.9rem;
+}
+
+.active-filter-tag button:hover {
+    color: #ff8888;
+}
+
+.clear-all-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.clear-all-btn:hover {
+    color: #ff8888;
+}
+
+/* Sortable Header */
+.header-cell.sortable {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.header-cell.sortable:hover {
+    color: #a8d0e6;
+}
+
+.sort-indicator {
+    font-size: 0.7rem;
+    color: #a8d0e6;
+}
+
+/* Add View Input */
+.add-view-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.add-view-input-wrapper input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: #fff;
+    font-size: 0.85rem;
+    width: 120px;
+}
+
+.add-view-input-wrapper input:focus {
+    outline: none;
+    border-color: #a8d0e6;
+}
+
+.add-view-input-wrapper button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 4px;
+    font-size: 1rem;
+}
+
+.add-view-input-wrapper button:hover {
+    color: #fff;
+}
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+}

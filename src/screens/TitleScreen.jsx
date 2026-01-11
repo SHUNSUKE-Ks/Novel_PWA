@@ -2,7 +2,7 @@ import { useGameStore } from '../hooks/useGameStore';
 import '../styles/screens/title.css';
 
 export const TitleScreen = () => {
-    const { goToChapterGallery, goToGallery, goToImport } = useGameStore();
+    const { goToChapterGallery, goToCollection } = useGameStore();
 
     return (
         <div className="title-screen">
@@ -11,6 +11,9 @@ export const TitleScreen = () => {
                 <div className="title-buttons">
                     <button className="start-button" onClick={goToChapterGallery}>
                         ストーリー
+                    </button>
+                    <button className="start-button secondary-btn" onClick={goToCollection}>
+                        コレクション
                     </button>
                 </div>
             </div>

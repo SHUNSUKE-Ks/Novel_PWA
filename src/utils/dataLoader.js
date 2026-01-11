@@ -1,9 +1,9 @@
 export const loadGameData = async () => {
     try {
         const [episodesRes, scenarioRes, galleryRes] = await Promise.all([
-            fetch('/src/assets/data/episodes.json'),
-            fetch('/src/assets/data/scenario.json'),
-            fetch('/src/assets/data/gallery.json')
+            fetch('/data/episodes.json'),
+            fetch('/data/scenario.json'),
+            fetch('/data/gallery.json')
         ]);
 
         const episodes = await episodesRes.json();

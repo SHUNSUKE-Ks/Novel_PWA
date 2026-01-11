@@ -23,11 +23,11 @@ export default function JsonEditor({
     return (
         <div className="json-editor-container">
             {!isEditorOpen ? (
-                <div className="flex-1 overflow-hidden relative">
+                <div className="game-view-wrapper flex-1 overflow-hidden relative">
                     {children}
                 </div>
             ) : (
-                <>
+                <div className="editor-view-wrapper flex-1 flex flex-col overflow-hidden">
                     <EditorHeader
                         jsonFileName={jsonFileName}
                         currentPattern={currentPattern}
@@ -38,7 +38,7 @@ export default function JsonEditor({
                         onFileChange={onFileChange}
                     />
 
-                    <div className="pattern-content">
+                    <div className="pattern-content flex-1 overflow-hidden">
                         {currentPattern === 1 && (
                             <Pattern1TextArea
                                 jsonData={gameData}
@@ -61,7 +61,7 @@ export default function JsonEditor({
                             />
                         )}
                     </div>
-                </>
+                </div>
             )}
         </div>
     );

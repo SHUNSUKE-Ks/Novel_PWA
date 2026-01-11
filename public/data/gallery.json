@@ -1,70 +1,58 @@
 {
     "images": [
         {
-            "id": "img-001",
-            "title": "魔法の塔",
-            "description": "理を求める者が訪れる塔",
-            "tags": [
-                "風景",
-                "建物"
-            ],
-            "src": "placeholder-tower",
-            "isDeleted": false
-        },
-        {
-            "id": "img-002",
-            "title": "魔法陣",
-            "description": "選択の間にある古代の魔法陣",
-            "tags": [
-                "風景",
-                "魔法"
-            ],
-            "src": "placeholder-circle",
-            "isDeleted": false
-        },
-        {
-            "id": "img-003",
-            "title": "理の魔法使い",
-            "description": "理を極めた賢者",
+            "id": "img001",
+            "title": "理の塔の魔法使い",
+            "filename": "9f580350d833f8147f65c2750455f8e6.jpg",
             "tags": [
                 "キャラクター",
-                "魔法使い"
-            ],
-            "src": "placeholder-mage",
-            "isDeleted": false
-        },
-        {
-            "id": "img-004",
-            "title": "魔法の書",
-            "description": "理の秘密が記された書物",
-            "tags": [
-                "アイテム",
+                "主人公",
                 "魔法"
             ],
-            "src": "placeholder-book",
-            "isDeleted": false
+            "description": "理の塔で研究に冒頭する魔法使いの姿"
         },
         {
-            "id": "img-005",
-            "title": "星空",
-            "description": "魔法の塔から見える夜空",
+            "id": "img002",
+            "title": "使い魔との対話",
+            "filename": "IMG_0038-removebg-preview.png",
             "tags": [
-                "風景",
-                "自然"
+                "キャラクター",
+                "使い魔"
             ],
-            "src": "placeholder-stars",
-            "isDeleted": false
+            "description": "主人公と使い魔が真理について議論する場面"
         },
         {
-            "id": "img-006",
-            "title": "魔法の杖",
-            "description": "理の力を宿す杖",
+            "id": "img003",
+            "title": "魔法陣の輝き",
+            "filename": "fairy-tale-house7.jpg",
             "tags": [
-                "アイテム",
-                "魔法"
+                "背景",
+                "魔法",
+                "魔法陣"
             ],
-            "src": "placeholder-staff",
-            "isDeleted": false
+            "description": "青く光り輝く魔法陣"
+        },
+        {
+            "id": "img004",
+            "title": "理の塔外観",
+            "filename": "ffaef9802239e020a3bf7e6ffa9b35eb.jpg",
+            "tags": [
+                "背景",
+                "建築物"
+            ],
+            "description": "夜空に聳える理の塔"
         }
+    ],
+    "trash": [],
+    "availableTags": [
+        "キャラクター",
+        "主人公",
+        "使い魔",
+        "背景",
+        "魔法",
+        "魔法陣",
+        "建築物",
+        "風景",
+        "イベント"
     ]
 }

@@ -12,7 +12,9 @@ export const useGameStore = create((set, get) => ({
       'IMPORT': 'episodes.json',
       'TITLE': 'episodes.json',
       'CHAPTER_GALLERY': 'episodes.json',
-      'RESULT': 'episodes.json'
+      'RESULT': 'episodes.json',
+      'COLLECTION': 'episodes.json',
+      'SOUND': 'episodes.json'
     };
     set({ screen, editorTargetFile: targetMap[screen] || 'episodes.json' });
   },
@@ -105,16 +107,38 @@ export const useGameStore = create((set, get) => ({
     if (currentIndex >= 0 && currentIndex < state.scenario.length - 1) {
       const nextNode = state.scenario[currentIndex + 1];
       set({ currentStoryID: nextNode.storyID });
+      get().addToTalkLog(nextNode);
       return nextNode;
     }
   },
 
   jumpToStoryID: (storyID) => {
     set({ currentStoryID: storyID });
+    const state = get();
+    const node = state.scenario?.find(n => n.storyID === storyID);
+    if (node) get().addToTalkLog(node);
+  },
+
+  // Talk log state
+  talkLog: [],
+  isTalkLogOpen: false,
+  toggleTalkLog: () => set((state) => ({ isTalkLogOpen: !state.isTalkLogOpen })),
+  addToTalkLog: (node) => {
+    if (!node || (!node.speaker && !node.text)) return;
+    set((state) => ({
+      talkLog: [...state.talkLog, {
+        id: node.storyID || Date.now(),
+        characterName: node.speaker || 'ナレーション',
+        text: node.text || '',
+        timestamp: new Date().toISOString()
+      }]
+    }));
   },
 
   // Navigation helpers
   goToChapterGallery: () => get().setScreen('CHAPTER_GALLERY'),
+  goToCollection: () => get().setScreen('COLLECTION'),
+  goToBGMPlayer: () => get().setScreen('SOUND'),
   goToGallery: () => {
     const state = get();
     const prev = state.screen;
@@ -135,13 +159,18 @@ export const useGameStore = create((set, get) => ({
   returnToTitle: () => get().setScreen('TITLE'),
   returnToChapterGallery: () => get().setScreen('CHAPTER_GALLERY'),
   startEvent: (eventID, startStoryID) => {
-    get().setScreen('MAIN');
+    const state = get();
+    state.setScreen('MAIN');
     set({
       currentEventID: eventID,
       currentStoryID: startStoryID,
       flags: {},
-      currentSceneTags: []
+      currentSceneTags: [],
+      talkLog: [] // Clear log on new event
     });
+    // Add initial node to log if it's dialogue
+    const startNode = state.scenario?.find(n => n.storyID === startStoryID);
+    if (startNode) get().addToTalkLog(startNode);
   },
   goToResult: () => get().setScreen('RESULT'),
 }));

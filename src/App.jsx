@@ -7,6 +7,8 @@ import { MainGameScreen } from './screens/MainGameScreen';
 import { ResultScreen } from './screens/ResultScreen';
 import { GalleryScreen } from './screens/GalleryScreen';
 import { AssetImportScreen } from './screens/AssetImportScreen';
+import { CollectionScreen } from './screens/CollectionScreen';
+import { BGMPlayerScreen } from './screens/BGMPlayerScreen';
 import { GlobalHeader } from './components/common/GlobalHeader';
 import JsonEditor from './components/JsonEditor';
 import './App.css';
@@ -87,12 +89,16 @@ function App() {
         onToggleEditor={toggleEditor}
         onFileChange={setEditorTargetFile}
       >
-        {screen === 'TITLE' && <TitleScreen />}
-        {screen === 'CHAPTER_GALLERY' && <ChapterGalleryScreen />}
-        {screen === 'MAIN' && <MainGameScreen />}
-        {screen === 'RESULT' && <ResultScreen />}
-        {screen === 'GALLERY' && <GalleryScreen />}
-        {screen === 'IMPORT' && <AssetImportScreen />}
+        <main className="screen-container">
+          {screen === 'TITLE' && <TitleScreen />}
+          {screen === 'CHAPTER_GALLERY' && <ChapterGalleryScreen />}
+          {screen === 'MAIN' && <MainGameScreen />}
+          {screen === 'RESULT' && <ResultScreen />}
+          {screen === 'GALLERY' && <GalleryScreen />}
+          {screen === 'IMPORT' && <AssetImportScreen />}
+          {screen === 'COLLECTION' && <CollectionScreen />}
+          {screen === 'SOUND' && <BGMPlayerScreen />}
+        </main>
       </JsonEditor>
     </div>
   );

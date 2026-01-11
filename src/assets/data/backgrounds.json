@@ -1,0 +1,90 @@
+{
+    "schema": "collection.background.v1",
+    "categories": [
+        {
+            "id": "nature",
+            "label": "自然"
+        },
+        {
+            "id": "dungeon",
+            "label": "ダンジョン"
+        },
+        {
+            "id": "town",
+            "label": "街"
+        },
+        {
+            "id": "event",
+            "label": "イベント"
+        }
+    ],
+    "backgrounds": [
+        {
+            "id": "bg_attic",
+            "name": "屋根裏部屋",
+            "category": "town",
+            "image": "bg/attic1.jpg",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            },
+            "tags": [
+                "indoor",
+                "room",
+                "wooden"
+            ],
+            "description": "静かな屋根裏部屋。物置として使われている。",
+            "order": 10
+        },
+        {
+            "id": "bg_campfire",
+            "name": "キャンプファイヤー",
+            "category": "nature",
+            "image": "bg/campfire1.jpg",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            },
+            "tags": [
+                "night",
+                "fire",
+                "outdoor"
+            ],
+            "description": "夜の森で焚き火を囲む休息のひととき。",
+            "order": 20
+        },
+        {
+            "id": "bg_forest_ruins",
+            "name": "森の遺跡",
+            "category": "dungeon",
+            "image": "bg/18332a75-faeb-4aec-b9e9-3d2854de459a.png",
+            "resolution": {
+                "width": 1920,
+                "height": 1080
+            },
+            "tags": [
+                "forest",
+                "ruins",
+                "mystery"
+            ],
+            "description": "森の奥深くに眠る古代の遺跡。",
+            "order": 30
+        },
+        {
+            "id": "bg_scenery",
+            "name": "風景画",
+            "category": "event",
+            "image": "bg/9f796349f7fff04530cf20b146dd10da.jpg",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            },
+            "tags": [
+                "art",
+                "scenery"
+            ],
+            "description": "美しい風景が描かれた一枚。",
+            "order": 40
+        }
+    ]
+}

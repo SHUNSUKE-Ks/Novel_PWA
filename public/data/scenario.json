@@ -1,36 +1,37 @@
 {
     "meta": {
         "title": "理の魔法使い",
-        "type": "visual_novel",
+        "type": "short_novel",
         "version": "1.0"
     },
     "scenario": [
         {
             "storyID": 1100,
+            "scene": 0,
             "type": "SCENE_START",
             "sceneTags": [
-                "bg_magic_tower"
+                "bg_magic_tower_interior_1280x720"
             ],
-            "note": "Chapter 1 - Event 1 開始"
+            "note": "Chapter1開始"
         },
         {
             "storyID": 1110,
-            "speaker": "理の魔法使い",
-            "text": "ここへ来た理由は、理を求めたからだろう。",
-            "tags": [
-                "chara_mage_calm"
-            ]
+            "scene": 1,
+            "speaker": "ナレーション",
+            "text": "高くそびえる塔の前に、あなたは立っている。"
         },
         {
             "storyID": 1120,
+            "scene": 1,
             "speaker": "理の魔法使い",
-            "text": "魔法とは理である。理なき力は、ただの暴力に過ぎない。",
+            "text": "ここへ来た理由は、理を求めたからだろう。",
             "tags": [
-                "chara_mage_calm"
+                "chara_mage_calm_512x768"
             ]
         },
         {
             "storyID": 1130,
+            "scene": 1,
             "event": {
                 "type": "TAP_NEXT",
                 "payload": {
@@ -40,33 +41,32 @@
         },
         {
             "storyID": 1200,
+            "scene": 2,
             "type": "SCENE_START",
             "sceneTags": [
-                "bg_magic_circle"
+                "bg_magic_tower_hall_1280x720"
             ],
-            "note": "Event 2 開始"
+            "note": "Chapter2開始"
         },
         {
             "storyID": 1210,
+            "scene": 2,
             "speaker": "理の魔法使い",
-            "text": "さあ、選びたまえ。力の理か、調和の理か。",
-            "tags": [
-                "chara_mage_calm"
-            ]
+            "text": "理には道がある。君はどれを選ぶ？"
         },
         {
             "storyID": 1220,
-            "text": "あなたの選択が、この物語の結末を決める。",
+            "scene": 2,
             "event": {
                 "type": "CHOICE",
                 "payload": {
                     "choices": [
                         {
-                            "label": "力の理を選ぶ",
+                            "label": "力の理",
                             "nextStoryID": 1300
                         },
                         {
-                            "label": "調和の理を選ぶ",
+                            "label": "調和の理",
                             "nextStoryID": 1301
                         }
                     ]
@@ -75,14 +75,22 @@
         },
         {
             "storyID": 1300,
-            "speaker": "理の魔法使い",
-            "text": "力の理か...その選択には、責任が伴う。",
-            "tags": [
-                "chara_mage_calm"
-            ]
+            "scene": 3,
+            "type": "SCENE_START",
+            "sceneTags": [
+                "bg_magic_tower_library_1280x720"
+            ],
+            "note": "Chapter3 力の理"
         },
         {
             "storyID": 1310,
+            "scene": 3,
+            "speaker": "理の魔法使い",
+            "text": "力とは、理解を伴わねば破壊となる。"
+        },
+        {
+            "storyID": 1320,
+            "scene": 3,
             "event": {
                 "type": "TAP_NEXT",
                 "payload": {
@@ -92,17 +100,22 @@
         },
         {
             "storyID": 1301,
-            "speaker": "理の魔法使い",
-            "text": "調和の理...良い選択だ。",
-            "tags": [
-                "chara_mage_calm"
-            ]
+            "scene": 3,
+            "type": "SCENE_START",
+            "sceneTags": [
+                "bg_magic_tower_library_1280x720"
+            ],
+            "note": "Chapter3 調和の理"
         },
         {
-            "storyID": 1311,
-            "flags": {
-                "trusted_reason": true
-            },
+            "storyID": 1330,
+            "scene": 3,
+            "speaker": "理の魔法使い",
+            "text": "調和とは、他者を知ることから始まる。"
+        },
+        {
+            "storyID": 1340,
+            "scene": 3,
             "event": {
                 "type": "TAP_NEXT",
                 "payload": {
@@ -112,45 +125,22 @@
         },
         {
             "storyID": 1400,
+            "scene": 4,
             "type": "SCENE_START",
             "sceneTags": [
-                "bg_magic_tower"
+                "bg_magic_tower_rooftop_1280x720"
             ],
-            "note": "Event 3 開始"
+            "note": "Chapter4開始"
         },
         {
             "storyID": 1410,
+            "scene": 4,
             "speaker": "理の魔法使い",
-            "text": "これで試練は終わりだ。",
-            "tags": [
-                "chara_mage_calm"
-            ]
+            "text": "選んだ理こそが、君自身だ。"
         },
         {
             "storyID": 1420,
-            "speaker": "理の魔法使い",
-            "text": "理の道を歩み続けるがいい。",
-            "tags": [
-                "chara_mage_calm"
-            ],
-            "event": {
-                "type": "END",
-                "payload": {
-                    "goto": "RESULT"
-                }
-            }
-        },
-        {
-            "storyID": 2100,
-            "type": "SCENE_START",
-            "sceneTags": [
-                "bg_black"
-            ],
-            "note": "Episode 2 - Chapter 1"
-        },
-        {
-            "storyID": 2110,
-            "text": "新しい冒険が始まる...",
+            "scene": 4,
             "event": {
                 "type": "END",
                 "payload": {

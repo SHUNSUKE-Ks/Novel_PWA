@@ -1,0 +1,41 @@
+{
+    "TITLE": {
+        "TITLE_BG": "title_bg_1920x1080.png",
+        "TITLE_LOGO": "title_logo_800x300.png",
+        "START_BUTTON": "start_button_300x100.png",
+        "OPTION_BUTTON": "option_button_200x80.png",
+        "BGM": "bgm_title_theme.mp3",
+        "SE_START": "se_button_start.mp3"
+    },
+    "NOVEL": {
+        "MAIN_BG": "game_bg_stage1_1920x1080.png"
+    },
+    "CHARACTERS": {
+        "レミ・ウナント": {
+            "name": "レミ・ウナント",
+            "defaultIcon": "remi_unant/face_smile.png",
+            "variants": {
+                "default": "remi_unant/face_smile.png",
+                "smile": "remi_unant/face_smile.png",
+                "angry": "remi_unant/face_angry.png"
+            }
+        },
+        "ラテル": {
+            "name": "ラテル",
+            "defaultIcon": "icon_latelle.png",
+            "variants": {
+                "default": "icon_latelle.png",
+                "smile": "icon_latelle_smile.png",
+                "troubled": "icon_latelle_troubled.png"
+            }
+        },
+        "ユースティア": {
+            "name": "ユースティア",
+            "defaultIcon": "icon_justia.png",
+            "variants": {
+                "default": "icon_justia.png",
+                "angry": "icon_justia_angry.png"
+            }
+        }
+    }
+}

@@ -54,3 +54,14 @@
     background: #4a90e2;
     color: #fff;
 }
+
+.start-button.secondary-btn {
+    border-color: #94a3b8;
+    color: #94a3b8;
+    margin-top: var(--spacing-xs);
+}
+
+.start-button.secondary-btn:hover {
+    background: #94a3b8;
+    color: #000;
+}

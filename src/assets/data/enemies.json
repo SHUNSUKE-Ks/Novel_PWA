@@ -1,0 +1,37 @@
+{
+    "enemies": [
+        {
+            "id": "slime_001",
+            "name": "Blue Slime",
+            "label": "Slime",
+            "tags": [
+                "ENEMY",
+                "MONSTER",
+                "SLIME"
+            ],
+            "stats": {
+                "hp": 20,
+                "mp": 0,
+                "atk": 5,
+                "def": 2
+            },
+            "description": "A basic slime monster. Weak but persistent."
+        },
+        {
+            "id": "goblin_001",
+            "name": "Goblin Scout",
+            "label": "Goblin",
+            "tags": [
+                "ENEMY",
+                "MONSTER"
+            ],
+            "stats": {
+                "hp": 45,
+                "mp": 5,
+                "atk": 12,
+                "def": 4
+            },
+            "description": "A small goblin sent to scout the area."
+        }
+    ]
+}

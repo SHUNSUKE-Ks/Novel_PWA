@@ -1,0 +1,53 @@
+{
+    "//": "🎯 00_ASSET_ORDER: ゲーム全体のアセット発注・差し替え用マニフェスト",
+    "PROJECT_INFO": {
+        "TITLE": "Novel PWA Engine",
+        "VERSION": "1.0.0",
+        "DESCRIPTION": "短編ノベルゲーム用アセット構成"
+    },
+    "ASSET_ORDER": {
+        "TITLE_SCREEN": {
+            "BACKGROUND": "src/assets/title/title_bg.png",
+            "LOGO": "src/assets/title/game_logo.png",
+            "START_BUTTON_SE": "src/assets/sound/se/page_turn.mp3",
+            "BGM": "src/assets/sound/bgm/Game_Op.mp3"
+        },
+        "CHARACTER_ASSETS": {
+            "REMI_UNANT": {
+                "ICON": "src/assets/chara/remi_unant/faces_sheet.png",
+                "FULL_SPRITE": "src/assets/chara/remi_unant/standing.png",
+                "VOICE_SAMPLE": "src/assets/sound/se/voice_hello.mp3"
+            },
+            "GUIDE_GIRL": {
+                "ICON": "src/assets/chara/案内少女-removebg-preview.png",
+                "FULL_SPRITE": "src/assets/chara/案内少女-removebg-preview.png"
+            },
+            "WHITE_HAIR_BOY": {
+                "ICON": "src/assets/chara/hakuhatu.png",
+                "FULL_SPRITE": "src/assets/chara/hakuhatu.png"
+            }
+        },
+        "BACKGROUNDS": {
+            "FOREST": "src/assets/bg/forest_day.png",
+            "TOWN": "src/assets/bg/town_evening.png",
+            "ROOM": "src/assets/bg/room_night.png"
+        },
+        "SOUND_BGM": {
+            "MAIN_THEME": "src/assets/sound/bgm/Game_Op.mp3",
+            "BATTLE_THEME": "src/assets/sound/bgm/戦いの鼓動.mp3",
+            "FIELD_THEME": "src/assets/sound/bgm/mori01.m4a"
+        },
+        "SOUND_SE": {
+            "KNOCK": "src/assets/sound/se/ドアノック1.mp3",
+            "PAGE_TURN": "src/assets/sound/se/ページをめくる1.mp3",
+            "DRAW_SWORD": "src/assets/sound/se/刀を構える.mp3",
+            "SHEATH_SWORD": "src/assets/sound/se/刀を鞘にしまう1.mp3",
+            "DOOR_OPEN": "src/assets/sound/se/扉が開く1.mp3"
+        },
+        "UI_PARTS": {
+            "DIALOGUE_BOX": "src/assets/ui/msg_window.png",
+            "NEXT_INDICATOR": "src/assets/ui/next_arrow.png",
+            "NOTE_ICON": "src/assets/ui/note_icon.png"
+        }
+    }
+}

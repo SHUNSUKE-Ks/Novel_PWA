@@ -1,0 +1,70 @@
+{
+    "tags": [
+        {
+            "id": "ALLY",
+            "name": "味方",
+            "category": "Affiliation",
+            "description": "主人公と共に戦う仲間。"
+        },
+        {
+            "id": "ENEMY",
+            "name": "敵",
+            "category": "Affiliation",
+            "description": "敵対する存在。"
+        },
+        {
+            "id": "ADVENTURER",
+            "name": "冒険者",
+            "category": "Class",
+            "description": "未知を求めて旅する者。"
+        },
+        {
+            "id": "WARRIOR",
+            "name": "戦士",
+            "category": "Class",
+            "description": "前線で戦う戦士。"
+        },
+        {
+            "id": "KNIGHT",
+            "name": "騎士",
+            "category": "Class",
+            "description": "タフで守りに優れた騎士。"
+        },
+        {
+            "id": "TACTICIAN",
+            "name": "軍師",
+            "category": "Role",
+            "description": "パーティーを導く軍師。"
+        },
+        {
+            "id": "MONSTER",
+            "name": "魔物",
+            "category": "Type",
+            "description": "ダンジョンや野外に生息する魔物。"
+        },
+        {
+            "id": "SLIME",
+            "name": "スライム",
+            "category": "Species",
+            "description": "粘液状の体を持つ魔物。"
+        },
+        {
+            "id": "GOTHIC_LOLI",
+            "name": "ゴスロリ",
+            "category": "Appearance",
+            "description": "ゴシック＆ロリータ様式の服装。"
+        },
+        {
+            "id": "WHITE_HAIR",
+            "name": "白髪",
+            "category": "Appearance",
+            "description": "白銀の髪を持つキャラクター。"
+        },
+        {
+            "id": "MYSTERIOUS",
+            "name": "謎",
+            "category": "Trait",
+            "description": "出身や目的が謎に包まれている。"
+        }
+    ]
+}

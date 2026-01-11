@@ -1,0 +1,106 @@
+{
+    "categories": [
+        {
+            "id": "consumable",
+            "label": "消耗品"
+        },
+        {
+            "id": "material",
+            "label": "素材"
+        },
+        {
+            "id": "key",
+            "label": "大事なもの"
+        },
+        {
+            "id": "equipment",
+            "label": "装備品"
+        }
+    ],
+    "items": [
+        {
+            "id": "potion_hp_001",
+            "name": "回復薬",
+            "category": "consumable",
+            "icon": "potion_red.png",
+            "tags": [
+                "HEAL",
+                "CONSUMABLE"
+            ],
+            "rarity": 1,
+            "price": 50,
+            "effect": "HPを30回復する",
+            "description": "傷を癒やす赤い薬。冒険者の必需品。"
+        },
+        {
+            "id": "potion_mp_001",
+            "name": "魔力の雫",
+            "category": "consumable",
+            "icon": "potion_blue.png",
+            "tags": [
+                "MANA",
+                "CONSUMABLE"
+            ],
+            "rarity": 2,
+            "price": 80,
+            "effect": "MPを20回復する",
+            "description": "魔力を回復する青い薬。魔法使いに人気。"
+        },
+        {
+            "id": "material_herb_001",
+            "name": "薬草",
+            "category": "material",
+            "icon": "herb.png",
+            "tags": [
+                "MATERIAL",
+                "PLANT"
+            ],
+            "rarity": 1,
+            "price": 10,
+            "effect": null,
+            "description": "どこにでも生えている薬草。調合に使う。"
+        },
+        {
+            "id": "material_ore_001",
+            "name": "鉄鉱石",
+            "category": "material",
+            "icon": "ore_iron.png",
+            "tags": [
+                "MATERIAL",
+                "ORE"
+            ],
+            "rarity": 2,
+            "price": 100,
+            "effect": null,
+            "description": "加工すれば武器や防具になる鉱石。"
+        },
+        {
+            "id": "key_letter_001",
+            "name": "王からの手紙",
+            "category": "key",
+            "icon": "letter.png",
+            "tags": [
+                "KEY_ITEM",
+                "QUEST"
+            ],
+            "rarity": 5,
+            "price": 0,
+            "effect": null,
+            "description": "王から託された重要な手紙。売却不可。"
+        },
+        {
+            "id": "equip_sword_001",
+            "name": "鉄の剣",
+            "category": "equipment",
+            "icon": "sword_iron.png",
+            "tags": [
+                "WEAPON",
+                "SWORD"
+            ],
+            "rarity": 2,
+            "price": 500,
+            "effect": "攻撃力+10",
+            "description": "鍛冶屋で作られた頑丈な剣。"
+        }
+    ]
+}

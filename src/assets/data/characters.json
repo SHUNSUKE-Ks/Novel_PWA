@@ -1,0 +1,51 @@
+{
+    "characters": [
+        {
+            "id": "remi_unant",
+            "name": "レミ・ウナント",
+            "dict": "A mysterious young woman dressed in elegant dark attire with a military flair. She possesses a calm and composed demeanor, often found in the shadows of the royal library or scouting the front lines with a silent, sharp presence.",
+            "tags": [
+                "GOTHIC_LOLI",
+                "TACTICIAN",
+                "WHITE_HAIR",
+                "MYSTERIOUS",
+                "ALLY"
+            ],
+            "image": "remi_unant/standing_01.png",
+            "standing": [
+                "remi_unant/standing_01.png"
+            ],
+            "cgs": [
+                "remi_unant/cg_event_01.png"
+            ]
+        },
+        {
+            "id": "latelle",
+            "name": "ラテル",
+            "dict": "実直な戦士。レミ宇ナントの盟友であり、前線でパーティーを支える。",
+            "tags": [
+                "ALLY",
+                "WARRIOR"
+            ],
+            "image": "hakuhatu.png",
+            "standing": [
+                "hakuhatu.png"
+            ],
+            "cgs": []
+        },
+        {
+            "id": "justia",
+            "name": "ユースティア",
+            "dict": "高潔な騎士。自らの信念に従い、弱きを助けるために剣を振る。",
+            "tags": [
+                "ALLY",
+                "KNIGHT"
+            ],
+            "image": "Curea.png",
+            "standing": [
+                "Curea.png"
+            ],
+            "cgs": []
+        }
+    ]
+}
