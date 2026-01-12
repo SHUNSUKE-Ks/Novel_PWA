@@ -51,3 +51,35 @@ button {
   font-family: inherit;
   font-size: 1rem;
 }
+
+/* =====================================================
+   RESPONSIVE STYLES - Mobile Landscape Mode
+   ===================================================== */
+
+/* Mobile Landscape Detection */
+@media (orientation: landscape) and (max-height: 500px) {
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* Dynamic viewport height for mobile */
+  }
+
+  #root {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+/* Very Short Screens */
+@media (max-height: 400px) {
+  :root {
+    font-size: 13px;
+  }
+}

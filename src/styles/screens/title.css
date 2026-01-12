@@ -65,3 +65,48 @@
     background: #94a3b8;
     color: #000;
 }
+
+/* =====================================================
+   RESPONSIVE STYLES - Mobile Landscape Mode
+   ===================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .title-content {
+        transform: scale(0.85);
+    }
+
+    .game-title {
+        font-size: var(--font-size-mobile-2xl);
+        margin-bottom: var(--spacing-mobile-md);
+    }
+
+    .title-buttons {
+        gap: var(--spacing-mobile-sm);
+    }
+
+    .start-button {
+        padding: var(--spacing-mobile-sm) var(--spacing-mobile-lg);
+        font-size: var(--font-size-mobile-lg);
+        min-width: 200px;
+    }
+
+    .start-button.import-btn {
+        padding: var(--spacing-mobile-sm) var(--spacing-mobile-md);
+        font-size: var(--font-size-mobile-sm);
+    }
+}
+
+@media (max-height: 400px) {
+    .title-content {
+        transform: scale(0.75);
+    }
+
+    .game-title {
+        font-size: 1.5rem;
+    }
+
+    .start-button {
+        min-width: 180px;
+        padding: var(--spacing-mobile-xs) var(--spacing-mobile-md);
+    }
+}

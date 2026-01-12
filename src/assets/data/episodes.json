@@ -12,6 +12,8 @@
                             "id": "event-1",
                             "title": "塔への招待",
                             "description": "理の魔法使いとの邂逅",
+                            "location": "MAGIC_TOWER",
+                            "type": "main",
                             "startStoryID": 1100
                         }
                     ]
@@ -24,6 +26,8 @@
                             "id": "event-2",
                             "title": "選択の間",
                             "description": "思想による分岐",
+                            "location": "MAGIC_TOWER",
+                            "type": "main",
                             "startStoryID": 1200
                         }
                     ]
@@ -36,6 +40,8 @@
                             "id": "event-3",
                             "title": "対話と理解",
                             "description": "魔法使いの真意",
+                            "location": "CAPITAL_CITY",
+                            "type": "main",
                             "startStoryID": 1300
                         }
                     ]
@@ -48,11 +54,40 @@
                             "id": "event-4",
                             "title": "結論",
                             "description": "理の選択の結果",
+                            "location": "STARTING_VILLAGE",
+                            "type": "main",
                             "startStoryID": 1400
                         }
                     ]
                 }
             ]
+        }
+    ],
+    "locations": [
+        {
+            "id": "STARTING_VILLAGE",
+            "label": "始まりの村",
+            "color": "#22c55e"
+        },
+        {
+            "id": "CAPITAL_CITY",
+            "label": "王都",
+            "color": "#f59e0b"
+        },
+        {
+            "id": "MAGIC_TOWER",
+            "label": "魔法塔",
+            "color": "#8b5cf6"
+        },
+        {
+            "id": "FOREST_ENTRANCE",
+            "label": "森の入り口",
+            "color": "#10b981"
+        },
+        {
+            "id": "MINING_TOWN",
+            "label": "鉱山街",
+            "color": "#6b7280"
         }
     ]
 }

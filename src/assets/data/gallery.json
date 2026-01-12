@@ -1,9 +1,38 @@
 {
+    "schema": "collection.gallery.v1",
+    "categories": [
+        {
+            "id": "cg",
+            "label": "CG",
+            "color": "#ec4899"
+        },
+        {
+            "id": "cutin",
+            "label": "カットイン",
+            "color": "#f59e0b"
+        },
+        {
+            "id": "event_movie",
+            "label": "イベント動画",
+            "color": "#8b5cf6"
+        },
+        {
+            "id": "character",
+            "label": "キャラクター",
+            "color": "#3b82f6"
+        },
+        {
+            "id": "background",
+            "label": "背景",
+            "color": "#10b981"
+        }
+    ],
     "images": [
         {
             "id": "img001",
             "title": "理の塔の魔法使い",
             "filename": "9f580350d833f8147f65c2750455f8e6.jpg",
+            "category": "character",
             "tags": [
                 "キャラクター",
                 "主人公",
@@ -15,6 +44,7 @@
             "id": "img002",
             "title": "使い魔との対話",
             "filename": "IMG_0038-removebg-preview.png",
+            "category": "character",
             "tags": [
                 "キャラクター",
                 "使い魔"
@@ -25,6 +55,7 @@
             "id": "img003",
             "title": "魔法陣の輝き",
             "filename": "fairy-tale-house7.jpg",
+            "category": "cg",
             "tags": [
                 "背景",
                 "魔法",
@@ -36,11 +67,51 @@
             "id": "img004",
             "title": "理の塔外観",
             "filename": "ffaef9802239e020a3bf7e6ffa9b35eb.jpg",
+            "category": "background",
             "tags": [
                 "背景",
                 "建築物"
             ],
             "description": "夜空に聳える理の塔"
+        },
+        {
+            "id": "cg_001",
+            "title": "主人公との邂逅",
+            "filename": "cg/meeting_scene.png",
+            "category": "cg",
+            "tags": [
+                "メインストーリー",
+                "魔法塔",
+                "レミ"
+            ],
+            "description": "魔法塔での運命的な出会いのシーン",
+            "episode": "ep1",
+            "chapter": "ep1-ch1"
+        },
+        {
+            "id": "cutin_001",
+            "title": "必殺技カットイン - レミ",
+            "filename": "cutin/remi_skill.png",
+            "category": "cutin",
+            "tags": [
+                "レミ",
+                "必殺技",
+                "バトル"
+            ],
+            "description": "レミの必殺技発動時のカットイン演出"
+        },
+        {
+            "id": "movie_001",
+            "title": "オープニングムービー",
+            "filename": "movie/opening_thumb.png",
+            "category": "event_movie",
+            "tags": [
+                "オープニング",
+                "メインストーリー"
+            ],
+            "description": "ゲーム開始時のオープニング映像",
+            "videoUrl": "movie/opening.mp4",
+            "duration": "2:30"
         }
     ],
     "trash": [],
@@ -53,6 +124,11 @@
         "魔法陣",
         "建築物",
         "風景",
-        "イベント"
+        "イベント",
+        "メインストーリー",
+        "バトル",
+        "必殺技",
+        "オープニング",
+        "エンディング"
     ]
 }

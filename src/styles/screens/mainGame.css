@@ -240,3 +240,76 @@
     border-color: var(--color-text-accent);
     color: var(--color-text-accent);
 }
+
+/* =====================================================
+   RESPONSIVE STYLES - Mobile Landscape Mode
+   ===================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .game-header {
+        padding: var(--spacing-mobile-xs) var(--spacing-mobile-md);
+    }
+
+    .header-btn {
+        padding: var(--spacing-mobile-xs) var(--spacing-mobile-sm);
+        font-size: var(--font-size-mobile-sm);
+    }
+
+    .message-window {
+        bottom: var(--spacing-mobile-sm);
+        width: 90%;
+        min-height: 100px;
+        padding: var(--spacing-mobile-sm) var(--spacing-mobile-md);
+    }
+
+    .speaker-name {
+        font-size: var(--font-size-mobile-sm);
+        margin-bottom: var(--spacing-mobile-xs);
+    }
+
+    .message-text {
+        font-size: var(--font-size-mobile-base);
+        line-height: 1.6;
+    }
+
+    .character-sprite {
+        font-size: 8rem;
+    }
+
+    .choice-container {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .choice-button {
+        padding: var(--spacing-mobile-sm);
+        font-size: var(--font-size-mobile-sm);
+    }
+
+    .menu-modal-content {
+        width: 250px;
+        padding: var(--spacing-mobile-md);
+    }
+
+    .menu-modal-content button {
+        padding: var(--spacing-mobile-sm);
+    }
+}
+
+/* Very short screens */
+@media (max-height: 400px) {
+    .message-window {
+        bottom: var(--spacing-mobile-xs);
+        min-height: 80px;
+        padding: var(--spacing-mobile-xs) var(--spacing-mobile-sm);
+    }
+
+    .message-text {
+        font-size: var(--font-size-mobile-xs);
+        line-height: 1.5;
+    }
+
+    .character-sprite {
+        font-size: 6rem;
+    }
+}

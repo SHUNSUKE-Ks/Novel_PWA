@@ -6,21 +6,22 @@
   --color-bg-panel: #1a1a1a;
   --color-bg-gradient-start: #111;
   --color-bg-gradient-end: #1a1a1a;
-  
+
   /* Colors - Text */
   --color-text-main: #e0e0e0;
-  --color-text-accent: #d4af37; /* Gold */
+  --color-text-accent: #d4af37;
+  /* Gold */
   --color-text-muted: #888;
-  
+
   /* Colors - Accent */
   --color-primary: #3d3d3d;
   --color-active: #5d5d5d;
   --color-border: #333;
   --color-border-light: rgba(255, 255, 255, 0.1);
-  
+
   /* Typography */
   --font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  
+
   /* Font Sizes */
   --font-size-xs: 0.85rem;
   --font-size-sm: 0.9rem;
@@ -29,7 +30,7 @@
   --font-size-xl: 1.5rem;
   --font-size-2xl: 2.5rem;
   --font-size-3xl: 3rem;
-  
+
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -37,9 +38,30 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
+
+  /* Responsive Breakpoints (for reference)
+   * Mobile Landscape: orientation: landscape AND max-height: 500px
+   * Small Mobile: max-width: 480px
+   * Tablet: max-width: 768px
+   * Short Screen: max-height: 400px
+   */
+
+  /* Mobile Font Sizes (used in media queries) */
+  --font-size-mobile-xs: 0.75rem;
+  --font-size-mobile-sm: 0.8rem;
+  --font-size-mobile-base: 0.85rem;
+  --font-size-mobile-lg: 1rem;
+  --font-size-mobile-xl: 1.2rem;
+  --font-size-mobile-2xl: 1.8rem;
+
+  /* Mobile Spacing */
+  --spacing-mobile-xs: 0.25rem;
+  --spacing-mobile-sm: 0.5rem;
+  --spacing-mobile-md: 0.75rem;
+  --spacing-mobile-lg: 1rem;
 }

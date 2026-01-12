@@ -255,7 +255,7 @@
     cursor: pointer;
     border-radius: 50%;
     display: flex;
-    items-center: center;
+    align-items: center;
     justify-content: center;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -419,4 +419,127 @@
     height: 2px;
     background: #fff;
     border-radius: 2px;
+}
+
+/* =====================================================
+   RESPONSIVE STYLES - Mobile Landscape Mode
+   ===================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .bgm-header {
+        padding: 0.5rem 1rem;
+    }
+
+    .bgm-title-text {
+        font-size: 1rem;
+    }
+
+    .bgm-main-content {
+        flex-direction: row;
+    }
+
+    .bgm-player-area {
+        padding: 1rem;
+        justify-content: flex-start;
+        padding-top: 0.5rem;
+    }
+
+    .album-art-container {
+        margin-bottom: 0;
+        transform: scale(0.5);
+        transform-origin: top center;
+    }
+
+    .main-album-art {
+        width: 280px;
+        height: 280px;
+    }
+
+    .art-placeholder-text {
+        font-size: 2rem;
+    }
+
+    .now-playing-container {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    .now-playing-glass-card {
+        padding: 1rem;
+        gap: 0.75rem;
+        border-radius: 16px;
+    }
+
+    .track-meta .track-title {
+        font-size: 1.2rem;
+    }
+
+    .track-meta .track-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .control-buttons-row {
+        gap: 1rem;
+    }
+
+    .btn-play-main {
+        width: 52px;
+        height: 52px;
+    }
+
+    .bgm-playlist-area {
+        width: 300px;
+        padding: 0.75rem;
+    }
+
+    .track-item {
+        padding: 0.5rem 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .track-icon-wrapper {
+        width: 36px;
+        height: 36px;
+    }
+
+    .track-text h3 {
+        font-size: 0.9rem;
+    }
+
+    .track-text p {
+        font-size: 0.8rem;
+    }
+
+    .search-input {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-height: 400px) {
+    .bgm-player-area {
+        display: none;
+    }
+
+    .bgm-playlist-area {
+        width: 100%;
+        border-left: none;
+    }
+
+    .now-playing-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0;
+    }
+
+    .now-playing-glass-card {
+        border-radius: 16px 16px 0 0;
+        padding: 0.75rem;
+    }
 }

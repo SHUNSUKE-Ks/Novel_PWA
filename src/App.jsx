@@ -11,6 +11,7 @@ import { CollectionScreen } from './screens/CollectionScreen';
 import { BGMPlayerScreen } from './screens/BGMPlayerScreen';
 import { GlobalHeader } from './components/common/GlobalHeader';
 import JsonEditor from './components/JsonEditor';
+import { GeneratorSidebar } from './features/AssetGenerator/GeneratorSidebar';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   } = useGameStore();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isGeneratorOpen, setIsGeneratorOpen] = useState(false);
 
   // Dynamic data and save logic based on editorTargetFile
   const getEditorContext = () => {
@@ -79,7 +81,11 @@ function App() {
 
   return (
     <div className="app-container">
-      <GlobalHeader />
+      <GlobalHeader onToggleGenerator={() => {
+        console.log("App: Setting isGeneratorOpen to true");
+        // alert("Debug: Opening Generator Sidebar!"); // Commented out to avoid annoyance, enabled if needed
+        setIsGeneratorOpen(true);
+      }} />
       <JsonEditor
         gameData={editorData}
         onSave={handleEditorSave}
@@ -96,10 +102,15 @@ function App() {
           {screen === 'RESULT' && <ResultScreen />}
           {screen === 'GALLERY' && <GalleryScreen />}
           {screen === 'IMPORT' && <AssetImportScreen />}
-          {screen === 'COLLECTION' && <CollectionScreen />}
+          {screen === 'COLLECTION' && <CollectionScreen onToggleGenerator={() => setIsGeneratorOpen(true)} />}
           {screen === 'SOUND' && <BGMPlayerScreen />}
         </main>
       </JsonEditor>
+
+      <GeneratorSidebar
+        isOpen={isGeneratorOpen}
+        onClose={() => setIsGeneratorOpen(false)}
+      />
     </div>
   );
 }

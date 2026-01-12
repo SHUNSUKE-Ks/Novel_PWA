@@ -1,0 +1,8 @@
+{
+    "background": "src/assets/bg/campfire1.jpg",
+    "logo": {
+        "src": "src/assets/title/Taitle_sikisi.png",
+        "effect": "fade-in"
+    },
+    "bgm": "src/assets/sound/bgm/BGM/_OP_.mp3"
+}

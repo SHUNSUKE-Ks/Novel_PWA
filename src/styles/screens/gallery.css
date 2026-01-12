@@ -193,3 +193,88 @@
     color: #000;
     font-weight: bold;
 }
+
+/* =====================================================
+   RESPONSIVE STYLES - Mobile Landscape Mode
+   ===================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .gallery-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .gallery-main-title {
+        font-size: 1.2rem;
+    }
+
+    .gallery-action-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .gallery-back-btn {
+        height: 32px;
+        padding: 0 1rem;
+        font-size: 0.85rem;
+    }
+
+    .tags-area {
+        padding: 0.75rem 1rem;
+        max-height: 100px;
+    }
+
+    .tags-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .tag-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .gallery-content {
+        padding: 1rem;
+    }
+
+    .images-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .image-card-header {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .image-card-title {
+        font-size: 0.9rem;
+    }
+
+    .image-card-img {
+        height: 140px;
+    }
+
+    .image-card-desc {
+        padding: 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-height: 400px) {
+    .tags-area {
+        max-height: 60px;
+        padding: 0.5rem;
+    }
+
+    .tags-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .images-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
+    .image-card-img {
+        height: 100px;
+    }
+}

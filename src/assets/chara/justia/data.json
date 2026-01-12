@@ -1,0 +1,39 @@
+{
+    "id": "justia",
+    "name": "ユースティア",
+    "description": "高潔な騎士。自らの信念に従い、弱きを助けるために剣を振る。清廉潔白な精神を持ち、学園制服を彷彿とさせる清廉な装いに身を包んだ騎士。",
+    "tags": [
+        "KNIGHT",
+        "HEROINE",
+        "ALLY",
+        "LONG_HAIR",
+        "BLONDE"
+    ],
+    "visualStyle": "High-quality modern anime style with clean lines and soft, atmospheric lighting, inspired by high-school fantasy aesthetics.",
+    "keyFeatures": [
+        "Long straight blonde hair with neat bangs",
+        "Deep blue expressive eyes",
+        "White short-sleeved school-style blouse with buttons",
+        "Dark wine-red bow tie",
+        "Navy blue pleated skirt",
+        "Slender and dignified posture"
+    ],
+    "assets": {
+        "standing": [
+            "standing_01.png",
+            "standing_02.png"
+        ],
+        "faces": {
+            "3": "normal.png",
+            "4": "smile.png",
+            "5": "determined.png",
+            "6": "angry.png",
+            "7": "sad.png",
+            "8": "blush.png"
+        },
+        "cgs": [
+            "cg_event_01.png",
+            "cg_event_02.png"
+        ]
+    }
+}

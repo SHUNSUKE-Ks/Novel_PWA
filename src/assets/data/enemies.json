@@ -1,37 +1,201 @@
 {
     "enemies": [
         {
-            "id": "slime_001",
-            "name": "Blue Slime",
+            "id": "monster_01",
+            "name": "シャドウウルフ",
+            "label": "Beast",
+            "tags": [
+                "ENEMY",
+                "BEAST",
+                "DARK"
+            ],
+            "image": "Monster_01.png",
+            "rarity": 2,
+            "stats": {
+                "hp": 85,
+                "mp": 15,
+                "atk": 28,
+                "def": 12
+            },
+            "skills": [
+                "咬みつき",
+                "シャドウバイト"
+            ],
+            "description": "闇に潜む獣。素早い動きで獲物を追い詰める。"
+        },
+        {
+            "id": "monster_02",
+            "name": "ゴーレム",
+            "label": "Golem",
+            "tags": [
+                "ENEMY",
+                "GOLEM",
+                "EARTH"
+            ],
+            "image": "Monster_02.png",
+            "rarity": 3,
+            "stats": {
+                "hp": 200,
+                "mp": 0,
+                "atk": 45,
+                "def": 50
+            },
+            "skills": [
+                "岩砕き",
+                "地震"
+            ],
+            "description": "古代の魔法で作られた岩の巨人。防御力が非常に高い。"
+        },
+        {
+            "id": "monster_03",
+            "name": "フレイムスピリット",
+            "label": "Spirit",
+            "tags": [
+                "ENEMY",
+                "SPIRIT",
+                "FIRE"
+            ],
+            "image": "Monster_03.png",
+            "rarity": 3,
+            "stats": {
+                "hp": 65,
+                "mp": 80,
+                "atk": 35,
+                "def": 8
+            },
+            "skills": [
+                "ファイアボール",
+                "炎の渦"
+            ],
+            "description": "炎を纏う精霊。魔法攻撃を得意とする。"
+        },
+        {
+            "id": "monster1",
+            "name": "グリーンスライム",
             "label": "Slime",
             "tags": [
                 "ENEMY",
-                "MONSTER",
-                "SLIME"
+                "SLIME",
+                "POISON"
             ],
+            "image": "Monster1.png",
+            "rarity": 1,
             "stats": {
-                "hp": 20,
-                "mp": 0,
-                "atk": 5,
-                "def": 2
+                "hp": 30,
+                "mp": 5,
+                "atk": 8,
+                "def": 5
             },
-            "description": "A basic slime monster. Weak but persistent."
+            "skills": [
+                "体当たり",
+                "毒液"
+            ],
+            "description": "どこにでも出現する基本的なモンスター。毒を持つ。"
         },
         {
-            "id": "goblin_001",
-            "name": "Goblin Scout",
-            "label": "Goblin",
+            "id": "monster2",
+            "name": "アイスエレメンタル",
+            "label": "Elemental",
             "tags": [
                 "ENEMY",
-                "MONSTER"
+                "ELEMENTAL",
+                "ICE"
             ],
+            "image": "Monster2.png",
+            "rarity": 2,
             "stats": {
-                "hp": 45,
-                "mp": 5,
-                "atk": 12,
-                "def": 4
+                "hp": 70,
+                "mp": 60,
+                "atk": 25,
+                "def": 15
             },
-            "description": "A small goblin sent to scout the area."
+            "skills": [
+                "アイスニードル",
+                "凍結"
+            ],
+            "description": "氷の精霊。冷気で敵を凍らせる。"
+        },
+        {
+            "id": "monster3",
+            "name": "ダークナイト",
+            "label": "Undead",
+            "tags": [
+                "ENEMY",
+                "UNDEAD",
+                "DARK"
+            ],
+            "image": "Monster3.png",
+            "rarity": 3,
+            "stats": {
+                "hp": 120,
+                "mp": 30,
+                "atk": 40,
+                "def": 35
+            },
+            "skills": [
+                "ダークスラッシュ",
+                "呪いの一撃"
+            ],
+            "description": "闇に染まった騎士の亡霊。強力な攻撃力を持つ。"
+        },
+        {
+            "id": "boss1",
+            "name": "ドラゴンロード",
+            "label": "Dragon",
+            "tags": [
+                "ENEMY",
+                "BOSS",
+                "DRAGON",
+                "FIRE"
+            ],
+            "image": "BOSS1.png",
+            "rarity": 5,
+            "stats": {
+                "hp": 500,
+                "mp": 150,
+                "atk": 80,
+                "def": 60
+            },
+            "skills": [
+                "ドラゴンブレス",
+                "暴風",
+                "メテオストライク"
+            ],
+            "description": "古代より君臨する竜の王。圧倒的な力を持つボスモンスター。"
+        }
+    ],
+    "categories": [
+        {
+            "id": "All",
+            "label": "すべて"
+        },
+        {
+            "id": "Slime",
+            "label": "スライム"
+        },
+        {
+            "id": "Beast",
+            "label": "ビースト"
+        },
+        {
+            "id": "Golem",
+            "label": "ゴーレム"
+        },
+        {
+            "id": "Spirit",
+            "label": "スピリット"
+        },
+        {
+            "id": "Elemental",
+            "label": "エレメンタル"
+        },
+        {
+            "id": "Undead",
+            "label": "アンデッド"
+        },
+        {
+            "id": "Dragon",
+            "label": "ドラゴン"
         }
     ]
 }

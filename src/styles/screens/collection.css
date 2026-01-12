@@ -323,3 +323,129 @@ h4 {
     margin: 0 0 20px 0;
     font-size: 1.2rem;
 }
+
+/* =====================================================
+   RESPONSIVE STYLES - Mobile Landscape Mode
+   ===================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .collection-header {
+        padding: 0 10px;
+    }
+
+    .nav-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .sub-nav-container {
+        padding: 5px 10px;
+        min-height: 40px;
+    }
+
+    .sub-nav-btn {
+        padding: 3px 10px;
+        font-size: 0.8rem;
+    }
+
+    .collection-content {
+        padding: 10px;
+    }
+
+    /* Character Encyclopedia - Horizontal Layout */
+    .character-encyclopedia {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .character-list {
+        width: 180px;
+        min-width: 180px;
+        padding: 10px;
+    }
+
+    .character-list h3 {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
+
+    .character-list li {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    .character-detail {
+        padding: 15px;
+    }
+
+    .detail-grid {
+        gap: 20px;
+    }
+
+    .char-card {
+        flex-direction: row;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .char-card img {
+        width: 120px;
+        height: 170px;
+    }
+
+    .char-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .char-info p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .assets-section {
+        gap: 20px;
+    }
+
+    .icons-section,
+    .standing-section {
+        min-width: 200px;
+    }
+
+    .icon-item img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .standing-img {
+        height: 250px;
+    }
+
+    .cg-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+    }
+
+    h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
+}
+
+@media (max-height: 400px) {
+    .character-list {
+        width: 150px;
+        min-width: 150px;
+    }
+
+    .char-card img {
+        width: 100px;
+        height: 140px;
+    }
+
+    .standing-img {
+        height: 180px;
+    }
+}

@@ -53,3 +53,40 @@
     color: #fff;
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
 }
+
+/* =====================================================
+   RESPONSIVE STYLES - Mobile Landscape Mode
+   ===================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .global-header {
+        padding: var(--spacing-mobile-sm) var(--spacing-mobile-xs);
+    }
+
+    .header-right-actions {
+        gap: var(--spacing-mobile-sm);
+        padding: var(--spacing-mobile-sm) var(--spacing-mobile-xs);
+        border-radius: 12px 0 0 12px;
+    }
+
+    .global-header-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        padding: var(--spacing-mobile-xs);
+        border-radius: 8px;
+    }
+}
+
+@media (max-height: 400px) {
+    .header-right-actions {
+        gap: var(--spacing-mobile-xs);
+        padding: var(--spacing-mobile-xs);
+    }
+
+    .global-header-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+}

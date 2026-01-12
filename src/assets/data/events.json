@@ -1,0 +1,76 @@
+{
+    "events": [
+        {
+            "id": "quest_001",
+            "title": "失われた剣を探せ",
+            "description": "鍛冶屋ガルドの依頼。行方不明になった伝説の剣を探す。",
+            "type": "quest",
+            "location": "MINING_TOWN",
+            "episode": "ep1",
+            "chapter": "ep1-ch2",
+            "reward": "経験値500、ゴールド300",
+            "difficulty": 2
+        },
+        {
+            "id": "quest_002",
+            "title": "薬草採取",
+            "description": "村の長老のために森で薬草を集める。",
+            "type": "quest",
+            "location": "FOREST_ENTRANCE",
+            "episode": "ep1",
+            "chapter": "ep1-ch1",
+            "reward": "回復薬x5",
+            "difficulty": 1
+        },
+        {
+            "id": "sub_001",
+            "title": "商人の護衛",
+            "description": "マルコの商品を隣町まで護衛する。",
+            "type": "sub",
+            "location": "CAPITAL_CITY",
+            "episode": "ep1",
+            "chapter": "ep1-ch3",
+            "reward": "ゴールド200",
+            "difficulty": 2
+        },
+        {
+            "id": "sub_002",
+            "title": "図書館の謎",
+            "description": "魔法塔の図書館に隠された古文書を解読する。",
+            "type": "sub",
+            "location": "MAGIC_TOWER",
+            "episode": "ep1",
+            "chapter": "ep1-ch2",
+            "reward": "魔法書「理の基礎」",
+            "difficulty": 3
+        },
+        {
+            "id": "sub_003",
+            "title": "衛兵隊の訓練",
+            "description": "カイル隊長との模擬戦。",
+            "type": "sub",
+            "location": "CAPITAL_CITY",
+            "episode": "ep1",
+            "chapter": "ep1-ch3",
+            "reward": "経験値300",
+            "difficulty": 2
+        }
+    ],
+    "types": [
+        {
+            "id": "main",
+            "label": "メインストーリー",
+            "color": "#ef4444"
+        },
+        {
+            "id": "quest",
+            "label": "クエスト",
+            "color": "#f59e0b"
+        },
+        {
+            "id": "sub",
+            "label": "サブイベント",
+            "color": "#3b82f6"
+        }
+    ]
+}

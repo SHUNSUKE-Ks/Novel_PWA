@@ -1,0 +1,199 @@
+{
+    "//": "🎨 キャラクターアセット発注書 - ラテル & ユースティア",
+    "ORDER_INFO": {
+        "ORDER_DATE": "2026-01-12",
+        "PROJECT": "Novel PWA - 理の魔法使い",
+        "ARTIST": "",
+        "STATUS": "未着手",
+        "PRIORITY": "高"
+    },
+    "CHARACTERS": [
+        {
+            "CHARACTER_ID": "latelle",
+            "CHARACTER_NAME": "ラテル",
+            "DESCRIPTION": "実直な戦士。レミ宇ナントの盟友であり、前線でパーティーを支える。",
+            "VISUAL_REFERENCE": {
+                "HAIR": "白髪",
+                "BUILD": "筋肉質、長身",
+                "OUTFIT": "軽装の戦士服、革鎧",
+                "WEAPON": "大剣または両手剣",
+                "PERSONALITY": "真面目、寡黙、信頼できる"
+            },
+            "ASSETS": {
+                "STANDING_ILLUSTRATIONS": [
+                    {
+                        "ID": "latelle_standing_01",
+                        "FILENAME": "latelle/standing_01.png",
+                        "SIZE": "1024x1536",
+                        "DESCRIPTION": "基本立ち絵 - 通常ポーズ、正面向き",
+                        "POSE": "直立、腕を組むor自然体"
+                    },
+                    {
+                        "ID": "latelle_standing_02",
+                        "FILENAME": "latelle/standing_02.png",
+                        "SIZE": "1024x1536",
+                        "DESCRIPTION": "戦闘立ち絵 - 剣を構えたポーズ",
+                        "POSE": "戦闘態勢、大剣を構える"
+                    }
+                ],
+                "EXPRESSION_ICONS": [
+                    {
+                        "ID": "latelle_face_normal",
+                        "FILENAME": "latelle/faces/normal.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "通常"
+                    },
+                    {
+                        "ID": "latelle_face_smile",
+                        "FILENAME": "latelle/faces/smile.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "微笑み"
+                    },
+                    {
+                        "ID": "latelle_face_angry",
+                        "FILENAME": "latelle/faces/angry.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "怒り"
+                    },
+                    {
+                        "ID": "latelle_face_sad",
+                        "FILENAME": "latelle/faces/sad.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "悲しみ"
+                    },
+                    {
+                        "ID": "latelle_face_surprised",
+                        "FILENAME": "latelle/faces/surprised.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "驚き"
+                    },
+                    {
+                        "ID": "latelle_face_serious",
+                        "FILENAME": "latelle/faces/serious.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "真剣"
+                    }
+                ],
+                "CG_ILLUSTRATIONS": [
+                    {
+                        "ID": "latelle_cg_01",
+                        "FILENAME": "latelle/cg/cg_event_01.png",
+                        "SIZE": "1920x1080",
+                        "SCENE": "戦場での決意 - 夕焼けを背に剣を振るうシーン",
+                        "DESCRIPTION": "戦闘後、敵を倒した直後の決意を秘めた表情"
+                    },
+                    {
+                        "ID": "latelle_cg_02",
+                        "FILENAME": "latelle/cg/cg_event_02.png",
+                        "SIZE": "1920x1080",
+                        "SCENE": "仲間との絆 - パーティーメンバーとの信頼シーン",
+                        "DESCRIPTION": "レミ宇ナントと背中合わせで戦う構図"
+                    }
+                ]
+            }
+        },
+        {
+            "CHARACTER_ID": "justia",
+            "CHARACTER_NAME": "ユースティア",
+            "DESCRIPTION": "高潔な騎士。自らの信念に従い、弱きを助けるために剣を振る。",
+            "VISUAL_REFERENCE": {
+                "HAIR": "金髪、ロング",
+                "BUILD": "中肉中背、凛とした姿勢",
+                "OUTFIT": "白を基調とした騎士鎧、マント",
+                "WEAPON": "細身の剣（レイピアorロングソード）",
+                "PERSONALITY": "高潔、正義感、優しい"
+            },
+            "ASSETS": {
+                "STANDING_ILLUSTRATIONS": [
+                    {
+                        "ID": "justia_standing_01",
+                        "FILENAME": "justia/standing_01.png",
+                        "SIZE": "1024x1536",
+                        "DESCRIPTION": "基本立ち絵 - 凛とした騎士の正装",
+                        "POSE": "直立、片手を胸に当てた騎士の礼"
+                    },
+                    {
+                        "ID": "justia_standing_02",
+                        "FILENAME": "justia/standing_02.png",
+                        "SIZE": "1024x1536",
+                        "DESCRIPTION": "戦闘立ち絵 - 剣を抜いた構え",
+                        "POSE": "剣を構えた戦闘態勢"
+                    }
+                ],
+                "EXPRESSION_ICONS": [
+                    {
+                        "ID": "justia_face_normal",
+                        "FILENAME": "justia/faces/normal.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "通常"
+                    },
+                    {
+                        "ID": "justia_face_smile",
+                        "FILENAME": "justia/faces/smile.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "微笑み"
+                    },
+                    {
+                        "ID": "justia_face_determined",
+                        "FILENAME": "justia/faces/determined.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "決意"
+                    },
+                    {
+                        "ID": "justia_face_angry",
+                        "FILENAME": "justia/faces/angry.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "怒り（正義の怒り）"
+                    },
+                    {
+                        "ID": "justia_face_sad",
+                        "FILENAME": "justia/faces/sad.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "悲しみ"
+                    },
+                    {
+                        "ID": "justia_face_blush",
+                        "FILENAME": "justia/faces/blush.png",
+                        "SIZE": "256x256",
+                        "EXPRESSION": "照れ"
+                    }
+                ],
+                "CG_ILLUSTRATIONS": [
+                    {
+                        "ID": "justia_cg_01",
+                        "FILENAME": "justia/cg/cg_event_01.png",
+                        "SIZE": "1920x1080",
+                        "SCENE": "騎士の誓い - 月明かりの下で剣を掲げるシーン",
+                        "DESCRIPTION": "夜空を背景に、自らの信念を誓う神聖な瞬間"
+                    },
+                    {
+                        "ID": "justia_cg_02",
+                        "FILENAME": "justia/cg/cg_event_02.png",
+                        "SIZE": "1920x1080",
+                        "SCENE": "弱者の守護 - 民を守るために立ちはだかるシーン",
+                        "DESCRIPTION": "傷ついた村人を背に庇い、敵に立ち向かう構図"
+                    }
+                ]
+            }
+        }
+    ],
+    "TECHNICAL_SPECS": {
+        "FORMAT": "PNG (透過あり)",
+        "COLOR_PROFILE": "sRGB",
+        "STANDING_SIZE": "1024x1536px",
+        "FACE_ICON_SIZE": "256x256px",
+        "CG_SIZE": "1920x1080px (16:9)",
+        "STYLE": "アニメ調イラスト、ファンタジーRPG風"
+    },
+    "OUTPUT_PATHS": {
+        "BASE_DIR": "src/assets/chara/",
+        "LATELLE_DIR": "src/assets/chara/latelle/",
+        "JUSTIA_DIR": "src/assets/chara/justia/"
+    },
+    "TOTAL_ASSETS": {
+        "STANDING_ILLUSTRATIONS": 4,
+        "EXPRESSION_ICONS": 12,
+        "CG_ILLUSTRATIONS": 4,
+        "TOTAL": 20
+    }
+}

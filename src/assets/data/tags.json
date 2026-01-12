@@ -4,67 +4,200 @@
             "id": "ALLY",
             "name": "味方",
             "category": "Affiliation",
+            "color": "#22c55e",
             "description": "主人公と共に戦う仲間。"
         },
         {
             "id": "ENEMY",
             "name": "敵",
             "category": "Affiliation",
+            "color": "#ef4444",
             "description": "敵対する存在。"
         },
         {
             "id": "ADVENTURER",
             "name": "冒険者",
             "category": "Class",
+            "color": "#3b82f6",
             "description": "未知を求めて旅する者。"
         },
         {
             "id": "WARRIOR",
             "name": "戦士",
             "category": "Class",
+            "color": "#f59e0b",
             "description": "前線で戦う戦士。"
         },
         {
             "id": "KNIGHT",
             "name": "騎士",
             "category": "Class",
+            "color": "#8b5cf6",
             "description": "タフで守りに優れた騎士。"
         },
         {
             "id": "TACTICIAN",
             "name": "軍師",
             "category": "Role",
+            "color": "#06b6d4",
             "description": "パーティーを導く軍師。"
         },
         {
             "id": "MONSTER",
             "name": "魔物",
             "category": "Type",
+            "color": "#dc2626",
             "description": "ダンジョンや野外に生息する魔物。"
         },
         {
             "id": "SLIME",
             "name": "スライム",
             "category": "Species",
+            "color": "#10b981",
             "description": "粘液状の体を持つ魔物。"
         },
         {
             "id": "GOTHIC_LOLI",
             "name": "ゴスロリ",
             "category": "Appearance",
+            "color": "#ec4899",
             "description": "ゴシック＆ロリータ様式の服装。"
         },
         {
             "id": "WHITE_HAIR",
             "name": "白髪",
             "category": "Appearance",
+            "color": "#e5e7eb",
             "description": "白銀の髪を持つキャラクター。"
         },
         {
             "id": "MYSTERIOUS",
             "name": "謎",
             "category": "Trait",
+            "color": "#7c3aed",
             "description": "出身や目的が謎に包まれている。"
+        },
+        {
+            "id": "STARTING_VILLAGE",
+            "name": "始まりの村",
+            "category": "Location",
+            "color": "#22c55e",
+            "description": "主人公の冒険が始まる小さな村。"
+        },
+        {
+            "id": "CAPITAL_CITY",
+            "name": "王都",
+            "category": "Location",
+            "color": "#f59e0b",
+            "description": "王国の中心地。"
+        },
+        {
+            "id": "FOREST_ENTRANCE",
+            "name": "森の入り口",
+            "category": "Location",
+            "color": "#10b981",
+            "description": "深い森への入り口。"
+        },
+        {
+            "id": "MINING_TOWN",
+            "name": "鉱山街",
+            "category": "Location",
+            "color": "#6b7280",
+            "description": "鉱石の採掘で栄える街。"
+        },
+        {
+            "id": "MAGIC_TOWER",
+            "name": "魔法塔",
+            "category": "Location",
+            "color": "#8b5cf6",
+            "description": "古代より存在する魔法研究の塔。"
+        },
+        {
+            "id": "MERCHANT",
+            "name": "商人",
+            "category": "NPCRole",
+            "color": "#eab308",
+            "description": "物品の売買を行うNPC。"
+        },
+        {
+            "id": "BLACKSMITH",
+            "name": "鍛冶屋",
+            "category": "NPCRole",
+            "color": "#78716c",
+            "description": "武器・防具の製造・修理を行うNPC。"
+        },
+        {
+            "id": "INNKEEPER",
+            "name": "宿屋",
+            "category": "NPCRole",
+            "color": "#f97316",
+            "description": "宿泊施設を運営するNPC。"
+        },
+        {
+            "id": "MAGE",
+            "name": "魔法使い",
+            "category": "NPCRole",
+            "color": "#a855f7",
+            "description": "魔法を研究・使用するNPC。"
+        },
+        {
+            "id": "GUARD",
+            "name": "衛兵",
+            "category": "NPCRole",
+            "color": "#64748b",
+            "description": "治安維持を担当するNPC。"
+        }
+    ],
+    "categories": [
+        {
+            "id": "Affiliation",
+            "label": "所属",
+            "color": "#22c55e"
+        },
+        {
+            "id": "Class",
+            "label": "クラス",
+            "color": "#3b82f6"
+        },
+        {
+            "id": "Role",
+            "label": "役割",
+            "color": "#06b6d4"
+        },
+        {
+            "id": "Type",
+            "label": "タイプ",
+            "color": "#dc2626"
+        },
+        {
+            "id": "Species",
+            "label": "種族",
+            "color": "#10b981"
+        },
+        {
+            "id": "Appearance",
+            "label": "外見",
+            "color": "#ec4899"
+        },
+        {
+            "id": "Trait",
+            "label": "特性",
+            "color": "#7c3aed"
+        },
+        {
+            "id": "Location",
+            "label": "場所",
+            "color": "#f59e0b"
+        },
+        {
+            "id": "NPCRole",
+            "label": "NPCロール",
+            "color": "#78716c"
+        },
+        {
+            "id": "Character",
+            "label": "キャラクター",
+            "color": "#ef4444"
         }
     ]
 }
