@@ -1,0 +1,37 @@
+{
+    "tips": [
+        {
+            "id": "tip_001",
+            "title": "理の塔 (Tower of Reason)",
+            "description": "古代より存在する魔法研究の塔。世界中の知識が集まると言われている。",
+            "image": "tips/tower_concept.jpg",
+            "category": "WORLD",
+            "tags": [
+                "WORLD",
+                "LOCATION"
+            ]
+        },
+        {
+            "id": "tip_002",
+            "title": "魔力 (Mana)",
+            "description": "この世界の根源的なエネルギー。全ての生命と物質に宿る。",
+            "image": "tips/mana_flow.jpg",
+            "category": "SYSTEM",
+            "tags": [
+                "SYSTEM",
+                "MAGIC"
+            ]
+        },
+        {
+            "id": "tip_003",
+            "title": "属性 (Elements)",
+            "description": "火、水、風、土の4大属性に加え、光と闇が存在する。",
+            "image": "tips/elements_chart.jpg",
+            "category": "BATTLE",
+            "tags": [
+                "BATTLE",
+                "ELEMENT"
+            ]
+        }
+    ]
+}

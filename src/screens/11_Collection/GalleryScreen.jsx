@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useGameStore } from '../hooks/useGameStore';
-import '../styles/screens/gallery.css';
+import { useGameStore } from '../../hooks/useGameStore';
+import '../../styles/screens/gallery.css';
 
 const GalleryHeader = () => {
     const { goBack } = useGameStore();

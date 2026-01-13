@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useGameStore } from '../hooks/useGameStore';
-import '../styles/screens/assetImport.css';
+import { useGameStore } from '../../hooks/useGameStore';
+import '../../styles/screens/assetImport.css';
 
 const ImportHeader = ({ onAuth }) => {
     const { goBack } = useGameStore();

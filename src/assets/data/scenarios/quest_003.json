@@ -1,0 +1,93 @@
+[
+    {
+        "storyID": 2000,
+        "scene": 10,
+        "type": "SCENE_START",
+        "sceneTags": [],
+        "backgroundImage": "bg/18332a75-faeb-4aec-b9e9-3d2854de459a.png",
+        "bgm": "mori01",
+        "note": "Quest: 森の遺跡の調査 開始"
+    },
+    {
+        "storyID": 2010,
+        "scene": 10,
+        "speaker": "ナレーション",
+        "text": "依頼を受けたあなたは、森の奥深くにある遺跡へとやってきた。",
+        "backgroundImage": "bg/18332a75-faeb-4aec-b9e9-3d2854de459a.png",
+        "bgm": "mori01"
+    },
+    {
+        "storyID": 2020,
+        "scene": 10,
+        "speaker": "ナレーション",
+        "text": "静まり返った遺跡の中に、不気味な気配が漂っている...",
+        "backgroundImage": "bg/18332a75-faeb-4aec-b9e9-3d2854de459a.png",
+        "bgm": "mori01"
+    },
+    {
+        "storyID": 2030,
+        "scene": 10,
+        "speaker": "シャドウウルフ",
+        "text": "グルルル...",
+        "characterImage": "Monster_01.png",
+        "backgroundImage": "bg/18332a75-faeb-4aec-b9e9-3d2854de459a.png",
+        "bgm": "mori01"
+    },
+    {
+        "storyID": 2035,
+        "scene": 10,
+        "event": {
+            "type": "BATTLE_START"
+        },
+        "speaker": "システム",
+        "text": "バトル開始！シャドウウルフが襲い掛かってきた！",
+        "characterImage": "Monster_01.png",
+        "backgroundImage": "bg/18332a75-faeb-4aec-b9e9-3d2854de459a.png",
+        "bgm": "mori01"
+    },
+    {
+        "storyID": 2036,
+        "scene": 10,
+        "speaker": "あなた",
+        "text": "（剣を構えて斬りかかる！）",
+        "characterImage": "Monster_01.png",
+        "backgroundImage": "bg/18332a75-faeb-4aec-b9e9-3d2854de459a.png",
+        "bgm": "mori01"
+    },
+    {
+        "storyID": 2037,
+        "scene": 10,
+        "speaker": "シャドウウルフ",
+        "text": "キャイン！",
+        "characterImage": "Monster_01.png",
+        "backgroundImage": "bg/18332a75-faeb-4aec-b9e9-3d2854de459a.png",
+        "bgm": "mori01"
+    },
+    {
+        "storyID": 2038,
+        "scene": 10,
+        "speaker": "ナレーション",
+        "text": "シャドウウルフは逃げ去っていった...",
+        "backgroundImage": "bg/18332a75-faeb-4aec-b9e9-3d2854de459a.png",
+        "bgm": "mori01"
+    },
+    {
+        "storyID": 2039,
+        "scene": 10,
+        "speaker": "システム",
+        "text": "ミッション達成！報酬として「薬草」を手に入れた。",
+        "backgroundImage": "bg/18332a75-faeb-4aec-b9e9-3d2854de459a.png",
+        "bgm": "mori01"
+    },
+    {
+        "storyID": 2040,
+        "scene": 10,
+        "event": {
+            "type": "END",
+            "payload": {
+                "goto": "COLLECTION"
+            }
+        },
+        "backgroundImage": "bg/18332a75-faeb-4aec-b9e9-3d2854de459a.png"
+    }
+]

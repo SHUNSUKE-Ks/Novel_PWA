@@ -1,5 +1,5 @@
-import { useGameStore } from '../hooks/useGameStore';
-import '../styles/screens/result.css';
+import { useGameStore } from '../../hooks/useGameStore';
+import '../../styles/screens/result.css';
 
 export const ResultScreen = () => {
     const { flags, returnToChapterGallery, episodes, currentEventID, startEvent } = useGameStore();

@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useGameStore } from './hooks/useGameStore';
 import { loadGameData } from './utils/dataLoader';
-import { TitleScreen } from './screens/TitleScreen';
-import { ChapterGalleryScreen } from './screens/ChapterGalleryScreen';
-import { MainGameScreen } from './screens/MainGameScreen';
-import { ResultScreen } from './screens/ResultScreen';
-import { GalleryScreen } from './screens/GalleryScreen';
-import { AssetImportScreen } from './screens/AssetImportScreen';
-import { CollectionScreen } from './screens/CollectionScreen';
-import { BGMPlayerScreen } from './screens/BGMPlayerScreen';
+import { TitleScreen } from './screens/01_Title/TitleScreen';
+import { ChapterGalleryScreen } from './screens/02_NovelPart/ChapterGalleryScreen';
+import { MainGameScreen } from './screens/02_NovelPart/MainGameScreen';
+import { BattleScreen } from './screens/03_BattlePart/BattleScreen';
+import { ResultScreen } from './screens/10_RESULTPart/ResultScreen';
+import { GalleryScreen } from './screens/11_Collection/GalleryScreen';
+import { AssetImportScreen } from './screens/00_GameManager/AssetImportScreen';
+import { CollectionScreen } from './screens/11_Collection/CollectionScreen';
+import { BGMPlayerScreen } from './screens/11_Collection/BGMPlayerScreen';
 import { GlobalHeader } from './components/common/GlobalHeader';
 import JsonEditor from './components/JsonEditor';
 import { GeneratorSidebar } from './features/AssetGenerator/GeneratorSidebar';
@@ -81,11 +82,6 @@ function App() {
 
   return (
     <div className="app-container">
-      <GlobalHeader onToggleGenerator={() => {
-        console.log("App: Setting isGeneratorOpen to true");
-        // alert("Debug: Opening Generator Sidebar!"); // Commented out to avoid annoyance, enabled if needed
-        setIsGeneratorOpen(true);
-      }} />
       <JsonEditor
         gameData={editorData}
         onSave={handleEditorSave}
@@ -94,11 +90,16 @@ function App() {
         isEditorOpen={isEditorOpen}
         onToggleEditor={toggleEditor}
         onFileChange={setEditorTargetFile}
+        onToggleGenerator={() => {
+          console.log("App: Setting isGeneratorOpen to true");
+          setIsGeneratorOpen(true);
+        }}
       >
         <main className="screen-container">
           {screen === 'TITLE' && <TitleScreen />}
           {screen === 'CHAPTER_GALLERY' && <ChapterGalleryScreen />}
           {screen === 'MAIN' && <MainGameScreen />}
+          {screen === 'BATTLE' && <BattleScreen />}
           {screen === 'RESULT' && <ResultScreen />}
           {screen === 'GALLERY' && <GalleryScreen />}
           {screen === 'IMPORT' && <AssetImportScreen />}

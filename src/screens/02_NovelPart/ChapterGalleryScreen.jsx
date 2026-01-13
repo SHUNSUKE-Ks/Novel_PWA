@@ -1,5 +1,5 @@
-import { useGameStore } from '../hooks/useGameStore';
-import '../styles/screens/chapterGallery.css';
+import { useGameStore } from '../../hooks/useGameStore';
+import '../../styles/screens/chapterGallery.css';
 
 const SidePanel = ({ episodes, selectedChapter, isPanelOpen }) => {
     const { setSelectedChapter } = useGameStore();

@@ -146,6 +146,48 @@
             "category": "NPCRole",
             "color": "#64748b",
             "description": "治安維持を担当するNPC。"
+        },
+        {
+            "id": "PROTAGONIST",
+            "name": "主人公",
+            "category": "Character",
+            "color": "#eab308",
+            "description": "物語の中心となるキャラクター。"
+        },
+        {
+            "id": "MAIN_CAST",
+            "name": "主要人物",
+            "category": "Character",
+            "color": "#f97316",
+            "description": "ストーリーに深く関わるキャラクター。"
+        },
+        {
+            "id": "NATURE",
+            "name": "自然",
+            "category": "Background",
+            "color": "#22c55e",
+            "description": "森や草原などの自然の風景。"
+        },
+        {
+            "id": "INDOOR",
+            "name": "屋内",
+            "category": "Background",
+            "color": "#a855f7",
+            "description": "建物の中の風景。"
+        },
+        {
+            "id": "BATTLE_BGM",
+            "name": "戦闘曲",
+            "category": "Music",
+            "color": "#dc2626",
+            "description": "戦闘シーンで使用される音楽。"
+        },
+        {
+            "id": "SAD_BGM",
+            "name": "悲しい曲",
+            "category": "Music",
+            "color": "#3b82f6",
+            "description": "悲しいシーンで使用される音楽。"
         }
     ],
     "categories": [
@@ -198,6 +240,16 @@
             "id": "Character",
             "label": "キャラクター",
             "color": "#ef4444"
+        },
+        {
+            "id": "Background",
+            "label": "背景",
+            "color": "#84cc16"
+        },
+        {
+            "id": "Music",
+            "label": "音楽",
+            "color": "#d946ef"
         }
     ]
 }

@@ -1,0 +1,212 @@
+/* Dragon Quest Style Battle Board */
+.battle-board-01 {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    /* Retro feel */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 1. Enemy Display Area (Top) */
+.battle-enemy-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #000;
+    /* Or a battle background image */
+}
+
+.enemy-sprite {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    transition: transform 0.2s;
+}
+
+.enemy-sprite.damaged {
+    animation: flash-damage 0.3s;
+}
+
+@keyframes flash-damage {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 2. Message Window (Center/Upper Overlay) */
+.battle-message-window {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 10;
+}
+
+/* 3. Bottom Section (Status + Command) */
+.battle-bottom-ui {
+    height: 250px;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background: #000;
+}
+
+/* 3a. Ally Status (Left) */
+.battle-status-window {
+    flex: 2;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 10px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+    border-bottom: 1px dashed #444;
+}
+
+.status-header {
+    font-weight: bold;
+    color: #ffd700;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 5px;
+}
+
+/* 3b. Command Window (Right) */
+.battle-command-window {
+    flex: 1;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 10px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.command-btn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid transparent;
+    text-align: left;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.command-btn:hover,
+.command-btn:focus {
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.command-btn::before {
+    content: '▶';
+    margin-right: 8px;
+    opacity: 0;
+}
+
+.command-btn:hover::before,
+.command-btn:focus::before {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .battle-bottom-ui {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .battle-status-window,
+    .battle-command-window {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* Active Character Highlight */
+.active-char {
+    background: rgba(255, 255, 255, 0.2);
+    border-left: 4px solid #ffd700;
+}
+
+/* Target Pulse Animation */
+.target-pulse {
+    animation: pulse-red 1s infinite;
+    filter: drop-shadow(0 0 10px #ff0000);
+}
+
+@keyframes pulse-red {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Blink Text for 'Press to Continue' */
+.blink-text {
+    animation: blink 1s infinite;
+    margin-top: 10px;
+    color: #ffff00;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.back-btn {
+    border-top: 1px dashed #666;
+    margin-bottom: 5px;
+    color: #aaa;
+}

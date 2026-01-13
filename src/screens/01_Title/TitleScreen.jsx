@@ -1,8 +1,11 @@
-import { useGameStore } from '../hooks/useGameStore';
-import '../styles/screens/title.css';
+import { useState } from 'react';
+import { useGameStore } from '../../hooks/useGameStore';
+import { QuestMenu } from './QuestMenu';
+import '../../styles/screens/title.css';
 
 export const TitleScreen = () => {
     const { goToChapterGallery, goToCollection } = useGameStore();
+    const [isQuestOpen, setIsQuestOpen] = useState(false);
 
     return (
         <div className="title-screen">
@@ -12,11 +15,15 @@ export const TitleScreen = () => {
                     <button className="start-button" onClick={goToChapterGallery}>
                         ストーリー
                     </button>
+                    <button className="start-button secondary-btn" onClick={() => setIsQuestOpen(true)}>
+                        クエスト
+                    </button>
                     <button className="start-button secondary-btn" onClick={goToCollection}>
                         コレクション
                     </button>
                 </div>
             </div>
+            {isQuestOpen && <QuestMenu onClose={() => setIsQuestOpen(false)} />}
         </div>
     );
 };

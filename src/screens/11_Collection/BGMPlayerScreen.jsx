@@ -1,18 +1,18 @@
 import React from 'react';
 import { ChevronLeft, Music, Menu } from 'lucide-react';
-import { useGameStore } from '../hooks/useGameStore';
-import { useBGMPlayer } from '../hooks/useBGMPlayer';
-import NowPlayingControl from '../components/bgm/NowPlayingControl';
-import '../styles/screens/bgmPlayer.css';
+import { useGameStore } from '../../hooks/useGameStore';
+import { useBGMPlayer } from '../../hooks/useBGMPlayer';
+import NowPlayingControl from '../../components/bgm/NowPlayingControl';
+import '../../styles/screens/bgmPlayer.css';
 
-import bgmListJson from '../assets/sound/bgm/BGM/00_bgmlist01.json';
+import bgmListJson from '../../assets/sound/bgm/BGM/00_bgmlist01.json';
 
 // Generate playlist from JSON
 const initialPlaylist = Object.entries(bgmListJson).map(([key, filename], index) => ({
     id: index + 1,
     title: key,
     subtitle: filename,
-    url: new URL(`../assets/sound/bgm/BGM/${filename}`, import.meta.url).href
+    url: new URL(`../../assets/sound/bgm/BGM/${filename}`, import.meta.url).href
 }));
 
 export const BGMPlayerScreen = ({ embedded = false }) => {

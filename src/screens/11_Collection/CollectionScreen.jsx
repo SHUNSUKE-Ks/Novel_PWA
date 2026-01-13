@@ -1,80 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles } from 'lucide-react';
-import { useGameStore } from '../hooks/useGameStore';
-import '../styles/screens/collection.css';
-import '../styles/screens/chapterGallery.css';
-import { getCharacterIconUrl, getCharacterVariants } from '../utils/characterRegistry';
-import characterDataJson from '../assets/data/characters.json';
-import backgroundsDataJson from '../assets/data/backgrounds.json';
-import enemyDataJson from '../assets/data/enemies.json';
-import tagsDataJson from '../assets/data/tags.json';
-import itemsDataJson from '../assets/data/items.json';
-import npcsDataJson from '../assets/data/npcs.json';
-import eventsDataJson from '../assets/data/events.json';
-import galleryDataJson from '../assets/data/gallery.json';
+import { useGameStore } from '../../hooks/useGameStore';
+import '../../styles/screens/collection.css';
+import '../../styles/screens/chapterGallery.css';
+import { getCharacterIconUrl, getCharacterVariants } from '../../utils/characterRegistry';
+import characterDataJson from '../../assets/data/characters.json';
+import backgroundsDataJson from '../../assets/data/backgrounds.json';
+import enemyDataJson from '../../assets/data/enemies.json';
+import tagsDataJson from '../../assets/data/tags.json';
+import itemsDataJson from '../../assets/data/items.json';
+import npcsDataJson from '../../assets/data/npcs.json';
+import eventsDataJson from '../../assets/data/events.json';
+import galleryDataJson from '../../assets/data/gallery.json';
 import { BGMPlayerScreen } from './BGMPlayerScreen';
-import { TableView } from '../components/Collection/DB_system';
-import { MultiSelect } from '../components/common/MultiSelect';
-import { TagManager } from '../components/common/TagManager';
+import { TableView } from '../../components/Collection/DB_system';
+import { MultiSelect } from '../../components/common/MultiSelect';
+import { TagManager } from '../../components/common/TagManager';
 
-// Use glob import to eagerly resolve all character assets
-const characterAssets = import.meta.glob('../assets/chara/**/*.{png,jpg,jpeg,svg}', { eager: true, import: 'default' });
-
-// Use glob for background assets as well
-const backgroundAssets = import.meta.glob('../assets/bg/*.{png,jpg,jpeg,svg}', { eager: true, import: 'default' });
-
-// Use glob for enemy assets
-const enemyAssets = import.meta.glob('../assets/enemy/*.{png,jpg,jpeg,svg}', { eager: true, import: 'default' });
-
-const resolveAssetUrl = (path) => {
-    if (!path) return "https://placehold.co/300x400/2a2a2a/FFF?text=No+Image";
-    if (path.startsWith('http')) return path;
-
-    // Construct the lookup key. 
-    // import.meta.glob keys are relative to the current file (CollectionScreen.jsx)
-    const key = `../assets/chara/${path}`;
-    const asset = characterAssets[key];
-
-    if (!asset) {
-        console.warn(`Asset not found: ${key}`);
-        return "https://placehold.co/300x400/2a2a2a/FFF?text=Asset+Not+Found";
-    }
-
-    return asset;
-};
-
-const resolveBgUrl = (path) => {
-    if (!path) return "https://placehold.co/600x400/2a2a2a/FFF?text=No+BG";
-    if (path.startsWith('http')) return path;
-
-    const key = `../assets/${path}`; // path includes 'bg/' prefix
-    const asset = backgroundAssets[key];
-
-    if (!asset) {
-        // Try without folder prefix if failed
-        const key2 = `../assets/bg/${path}`;
-        const asset2 = backgroundAssets[key2];
-        if (asset2) return asset2;
-
-        console.warn(`BG Asset not found: ${key}`);
-        return "https://placehold.co/600x400/2a2a2a/FFF?text=BG+Not+Found";
-    }
-    return asset;
-};
-
-const resolveEnemyUrl = (filename) => {
-    if (!filename) return "https://placehold.co/300x400/2a2a2a/FFF?text=No+Enemy";
-    if (filename.startsWith('http')) return filename;
-
-    const key = `../assets/enemy/${filename}`;
-    const asset = enemyAssets[key];
-
-    if (!asset) {
-        console.warn(`Enemy Asset not found: ${key}`);
-        return "https://placehold.co/300x400/2a2a2a/FFF?text=Enemy+Not+Found";
-    }
-    return asset;
-};
+import {
+    resolveAssetUrl,
+    resolveBgUrl,
+    resolveEnemyUrl
+} from '../../utils/assetUtils';
 
 export const CollectionScreen = ({ onToggleGenerator }) => {
     const { goBack, episodes, selectedChapter, setSelectedChapter, startEvent } = useGameStore();
@@ -1570,6 +1517,28 @@ export const CollectionScreen = ({ onToggleGenerator }) => {
                                                 }}>
                                                     💰 報酬: {event.reward}
                                                 </div>
+                                                <button
+                                                    onClick={() => {
+                                                        if (event.startStoryID) {
+                                                            startEvent(event.id, event.startStoryID);
+                                                        } else {
+                                                            alert("このイベントは現在プレイできません");
+                                                        }
+                                                    }}
+                                                    style={{
+                                                        marginTop: '0.75rem',
+                                                        width: '100%',
+                                                        padding: '0.5rem',
+                                                        background: event.startStoryID ? 'var(--color-text-accent)' : '#444',
+                                                        color: event.startStoryID ? '#000' : '#888',
+                                                        border: 'none',
+                                                        borderRadius: '6px',
+                                                        fontWeight: 'bold',
+                                                        cursor: event.startStoryID ? 'pointer' : 'not-allowed'
+                                                    }}
+                                                >
+                                                    {event.startStoryID ? 'イベントを開始' : '準備中'}
+                                                </button>
                                             </div>
                                         );
                                     })}

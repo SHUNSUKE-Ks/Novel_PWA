@@ -4,33 +4,79 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    /* Changed to row for side-by-side */
     overflow: hidden;
+}
+
+.game-view-wrapper {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.editor-view-wrapper {
+    width: 450px;
+    /* Fixed width for sidebar */
+    min-width: 300px;
+    max-width: 50vw;
+    background-color: #1a1a1a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #333;
+    z-index: 1000;
+    transition: width 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.side-panel-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    padding: 12px 8px;
+    cursor: pointer;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s;
+}
+
+.side-panel-toggle:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--color-text-accent);
 }
 
 /* Editor Header */
 .editor-view-header {
     background-color: #1a1a1a;
     color: #fff;
-    padding: var(--spacing-sm) var(--spacing-lg);
+    padding: var(--spacing-sm);
     display: flex;
-    justify-content: gap;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #333;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
     z-index: 1001;
 }
 
 .editor-title {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
     font-weight: bold;
     color: var(--color-text-main);
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .editor-search-container {
     flex: 1;
-    max-width: 500px;
     position: relative;
 }
 
@@ -39,32 +85,35 @@
     background: #2a2a2a;
     border: 1px solid #444;
     color: #fff;
-    padding: 8px 12px 8px 35px;
-    border-radius: 8px;
+    padding: 6px 10px 6px 30px;
+    border-radius: 6px;
     font-family: var(--font-main);
+    font-size: 0.9rem;
 }
 
 .editor-search-icon {
     position: absolute;
-    left: 10px;
+    left: 8px;
     top: 50%;
     transform: translateY(-50%);
     color: #888;
+    font-size: 0.9rem;
 }
 
 .editor-controls {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: 4px;
 }
 
 .pattern-select {
     background: #2a2a2a;
     color: #fff;
     border: 1px solid #444;
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 4px 8px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 0.85rem;
 }
 
 .game-preview-toggle {

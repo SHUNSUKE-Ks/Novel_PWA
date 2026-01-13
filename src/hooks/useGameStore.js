@@ -172,5 +172,13 @@ export const useGameStore = create((set, get) => ({
     const startNode = state.scenario?.find(n => n.storyID === startStoryID);
     if (startNode) get().addToTalkLog(startNode);
   },
+  goToBattle: () => get().setScreen('BATTLE'),
+  returnFromBattle: (nextStoryID) => {
+    const state = get();
+    state.setScreen('MAIN');
+    if (nextStoryID) {
+      get().jumpToStoryID(nextStoryID);
+    }
+  },
   goToResult: () => get().setScreen('RESULT'),
 }));

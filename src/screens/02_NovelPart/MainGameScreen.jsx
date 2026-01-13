@@ -1,22 +1,43 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { NotebookPen } from 'lucide-react';
-import { useGameStore } from '../hooks/useGameStore';
-import { useTypewriter } from '../hooks/useTypewriter';
-import TalkLogModal from '../components/talk-log/TalkLogModal';
-import '../styles/screens/mainGame.css';
+import { useGameStore } from '../../hooks/useGameStore';
+import { useTypewriter } from '../../hooks/useTypewriter';
+import { resolveBgUrl, resolveEnemyUrl, resolveBgmUrl } from '../../utils/assetUtils';
+import TalkLogModal from '../../components/talk-log/TalkLogModal';
+import '../../styles/screens/mainGame.css';
 
-const BackgroundLayer = ({ sceneTags }) => {
-    const bgClass = sceneTags?.find(tag => tag.startsWith('bg_'))?.replace(/_/g, '-') || 'bg-black';
-    return <div className={`background-layer ${bgClass}`} />;
+// BGM Mapping (Temporary, ideally load from 00_bgmlist01.json)
+const BGM_MAP = {
+    "mori01": "mori01.m4a"
 };
 
-const CharacterLayer = ({ tags }) => {
-    const hasCharacter = tags?.some(tag => tag.startsWith('chara_'));
+const BackgroundLayer = ({ sceneTags, backgroundImage }) => {
+    const bgClass = sceneTags?.find(tag => tag.startsWith('bg_'))?.replace(/_/g, '-') || 'bg-black';
+    const bgUrl = backgroundImage ? resolveBgUrl(backgroundImage) : null;
+
+    return (
+        <div className={`background-layer ${!bgUrl ? bgClass : ''}`} style={bgUrl ? {
+            backgroundImage: `url(${bgUrl})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+        } : {}} />
+    );
+};
+
+const CharacterLayer = ({ tags, characterImage }) => {
+    // Priority: Explicit characterImage (Enemy/Special) > properties > tags
+    const hasCharacter = tags?.some(tag => tag.startsWith('chara_')) || characterImage;
     if (!hasCharacter) return null;
+
+    const imgUrl = characterImage ? resolveEnemyUrl(characterImage) : null;
 
     return (
         <div className="character-layer">
-            <div className="character-sprite">🧙</div>
+            {imgUrl ? (
+                <img src={imgUrl} alt="Character" className="character-sprite-img" style={{ height: '80vh', objectFit: 'contain' }} />
+            ) : (
+                <div className="character-sprite">🧙</div>
+            )}
         </div>
     );
 };
@@ -98,6 +119,8 @@ export const MainGameScreen = () => {
         setSceneTags,
         setFlags,
         goToResult,
+        goToBattle,
+        goToCollection,
         scenario,
         isTalkLogOpen,
         toggleTalkLog,
@@ -106,11 +129,12 @@ export const MainGameScreen = () => {
 
     const currentNode = getCurrentNode();
     const { displayText, isComplete, skipToEnd } = useTypewriter(currentNode?.text || '', 50);
+    const audioRef = useRef(null);
 
     useEffect(() => {
         if (!currentNode) return;
 
-        // Handle SCENE_START
+        // Handle SCENE_START (and BGM)
         if (currentNode.type === 'SCENE_START') {
             if (currentNode.sceneTags) {
                 setSceneTags(currentNode.sceneTags);
@@ -123,6 +147,25 @@ export const MainGameScreen = () => {
         }
     }, [currentNode?.storyID, setSceneTags, goToNextNode]);
 
+    // BGM Effect
+    useEffect(() => {
+        if (currentNode?.bgm && audioRef.current) {
+            const filename = BGM_MAP[currentNode.bgm] || currentNode.bgm;
+            const bgmUrl = resolveBgmUrl(filename);
+            if (bgmUrl && audioRef.current.src !== bgmUrl) {
+                audioRef.current.src = bgmUrl;
+                audioRef.current.play().catch(e => console.log("Audio play failed (interaction needed):", e));
+            }
+        }
+    }, [currentNode?.bgm]);
+
+
+    const [fadeOpacity, setFadeOpacity] = useState(1); // Start black (Fade In)
+
+    // Fade In on mount
+    useEffect(() => {
+        requestAnimationFrame(() => setFadeOpacity(0));
+    }, []);
 
     const handleMessageClick = () => {
         if (!currentNode) return;
@@ -141,7 +184,20 @@ export const MainGameScreen = () => {
             if (currentNode.flags) {
                 setFlags(currentNode.flags);
             }
-            goToResult();
+            const dest = currentNode.event.payload?.goto;
+            if (dest === 'COLLECTION') {
+                setFadeOpacity(1);
+                setTimeout(() => goToCollection(), 500);
+            } else {
+                goToResult();
+            }
+            return;
+        }
+
+        // Check for BATTLE_START event
+        if (currentNode.event?.type === 'BATTLE_START') {
+            setFadeOpacity(1);
+            setTimeout(() => goToBattle(), 1000);
             return;
         }
 
@@ -172,9 +228,16 @@ export const MainGameScreen = () => {
 
     return (
         <div className="main-game-screen">
-            <BackgroundLayer sceneTags={currentNode.sceneTags} />
+            {/* Fade Overlay */}
+            <div style={{
+                position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+                backgroundColor: 'black', opacity: fadeOpacity, pointerEvents: 'none',
+                transition: 'opacity 0.5s ease', zIndex: 9999
+            }} />
+
+            <BackgroundLayer sceneTags={currentNode.sceneTags} backgroundImage={currentNode.backgroundImage} />
             <GameHeader />
-            <CharacterLayer tags={currentNode.tags} />
+            <CharacterLayer tags={currentNode.tags} characterImage={currentNode.characterImage} />
             <MessageWindow
                 key={`msg-${currentNode.storyID}`}
                 speaker={currentNode.speaker}
@@ -196,6 +259,8 @@ export const MainGameScreen = () => {
                 onClose={toggleTalkLog}
                 logData={talkLog}
             />
+            {/* Hidden Audio Player */}
+            <audio ref={audioRef} loop />
         </div>
     );
 };
